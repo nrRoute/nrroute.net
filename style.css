@@ -15,12 +15,16 @@ main {
     text-align:left;
     background:  #70120f;
 }
-.name {
-    font-size: 30px;
-    font-weight bold;
-    margin: 20px 15px;
+.nnav__menu{
+    display: flex;
 }
-.name a{
+.nnav__menu__item{
+    font-size: 30px;
+    font-weight: bold;
+    list-style: none;
+    margin: 28px 20px;
+}
+.nnav__menu__item a{
     color: #fcf3e1;
     display: block;
     text-decoration: none;
