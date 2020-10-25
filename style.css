@@ -45,11 +45,6 @@ img.logo{
 .gnav__menu__item a:hover::after {
     width: 100%;
 }
-.relax{
-    margin: 10px auto;
-    padding:  10px 0;
-    text-align: center;
-}
 .content{
     line-height: 1.6;
     margin: 0 auto;
