@@ -17,6 +17,8 @@ main {
 }
 .name {
     font-size: 30px;
+    font-weight bold;
+    margin: 20px 15px;
 }
 .name a{
     color: #fcf3e1;
