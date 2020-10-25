@@ -15,9 +15,13 @@ main {
     text-align:left;
     background:  #70120f;
 }
-.name{
+.name {
     font-size: 30px;
+}
+.name a{
     color: #fcf3e1;
+    display: block;
+    text-decoration: none;
 }
 .gnav__menu{
     display: flex;
