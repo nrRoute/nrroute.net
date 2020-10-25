@@ -15,9 +15,9 @@ main {
     text-align:left;
     background:  #70120f;
 }
-img.logo{
-    margin-top: 10px;
-    height:  80px;
+.name{
+    font-size: 30px;
+    color: #fcf3e1;
 }
 .gnav__menu{
     display: flex;
