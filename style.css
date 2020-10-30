@@ -1,13 +1,17 @@
 body{
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     font-family:   Meiryo, Yu Gothic, sans-serif; 
     background: #e9e7e7;
 }
-main {
-    padding: 40px 20px;
-    height: 1050px;
+
+body,
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 .header{
     position: sticky;
     top: 0;
@@ -15,34 +19,45 @@ main {
     text-align:left;
     background:  #70120f;
 }
+
+main{
+    height: auto;
+}
+
 .nnav__menu{
     display: flex;
 }
+
 .nnav__menu__item{
     font-size: 30px;
     font-weight: bold;
     list-style: none;
     margin: 28px 20px;
 }
+
 .nnav__menu__item a{
     color: #fcf3e1;
     display: block;
     text-decoration: none;
 }
+
 .gnav__menu{
     display: flex;
     padding-right:  55px;
 }
+
 .gnav__menu__item{
     font-size:  20px;
     list-style: none;
     margin: 20px 15px;
 }
+
 .gnav__menu__item a{
     color: #d1d1d1;
     display: block;
     text-decoration: none;
 }
+
 .gnav__menu__item a::after {
     display: block;
     border-bottom: solid 3px #ffffff;
@@ -52,19 +67,40 @@ main {
     -webkit-transition: all .3s ease;
     width: 0;
 }
+
 .gnav__menu__item a:hover::after {
     width: 100%;
 }
+
 .content{
     line-height: 1.6;
     margin: 0 auto;
     width: 800px;
     font-size:  20px;
 }
+
+.content a{
+    color: #70120f;
+    border-bottom: solid 2px #825858;
+    text-decoration: none;
+}
+
+.content a:hover{
+    background: #d1d1d1;
+}
+
+.content input[type='text'] {
+    box-sizing: border-box;
+    width: auto;
+    padding: 0.3em;
+    border: 0;
+}
+
 .footer{
+    margin-top: auto;
     padding-top:  20px;
     bottom: 0;
-    width: 100%;
+    width: auto;
     height: 80px;
     color: #e9e7e7;
     text-align: center;
