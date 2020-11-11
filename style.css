@@ -96,6 +96,12 @@ main{
     border: 0;
 }
 
+.twitter{
+    color: #40ebed;
+    border-bottom: solid 2px #825858;
+    text-decoration: none;
+}
+
 .footer{
     margin-top: auto;
     padding-top:  20px;
