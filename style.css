@@ -91,7 +91,7 @@ main{
 
 .content input[type='text'] {
     box-sizing: border-box;
-    width: auto;
+    width: 300px;
     padding: 0.3em;
     border: 0;
 }
