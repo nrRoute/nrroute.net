@@ -97,7 +97,7 @@ main{
 }
 
 .twitter{
-    color: #40ebed;
+    color: #40ebed !important;
 }
 
 .footer{
