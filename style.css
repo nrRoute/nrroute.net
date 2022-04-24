@@ -14,11 +14,13 @@ body,
 }
 
 .header{
+    background: #70120f;
+    display: flex;
+    padding: 40px 20px;
     position: sticky;
     top: 0;
-    display:  flex;
     text-align:left;
-    background:  #70120f;
+    width: 100%;
 }
 
 main{
@@ -51,10 +53,9 @@ main{
 }
 
 .gnav__menu__item{
-    font-size:  20px;
+    font-size: 20px;
     list-style: none;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 20px;
 }
 
 .gnav__menu__item a{
@@ -134,7 +135,6 @@ main{
         font-size: 17px;
         list-style: none;
         margin-left: 12px;
-        margin-right: 12px;
     }
     .gnav__menu__item a{
         color: #d1d1d1;
