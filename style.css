@@ -19,6 +19,7 @@ body,
     display:  flex;
     text-align:left;
     background:  #70120f;
+    padding: 40px 20px;
 }
 
 main{
