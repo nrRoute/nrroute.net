@@ -111,7 +111,7 @@ main{
     background:   #2b2727;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 440px) {
     body{
         margin: 0 auto;
         padding: 0;
@@ -164,5 +164,16 @@ main{
         color: #d1d1d1;
         display: block;
         text-decoration: none;
+    }
+    
+    .footer{
+        margin-top: auto;
+        padding-top: 15px;
+        bottom: 0;
+        width: auto;
+        height: 70px;
+        color: #e9e7e7;
+        text-align: center;
+        background: #2b2727;
     }
 }
