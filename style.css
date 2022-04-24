@@ -134,7 +134,7 @@ main{
     }
     
     main{
-        height: 300px;
+        height: auto;
     }
     
     .nnav__menu{
@@ -163,6 +163,18 @@ main{
     .gnav__menu__item a{
         color: #d1d1d1;
         display: block;
+        text-decoration: none;
+    }
+    
+    .content{
+        line-height: 1.6;
+        margin: 0 auto;
+        width: auto;
+        font-size: 18px;
+    }
+    .content a{
+        color: #70120f;
+        border-bottom: solid 2px #825858;
         text-decoration: none;
     }
     
