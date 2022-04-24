@@ -112,48 +112,16 @@ main{
 }
 
 @media screen and (max-width: 440px) {
-    body{
-        margin: 0 auto;
-        padding: 0;
-        font-family: Meiryo, Yu Gothic, sans-serif;
-        background: #e9e7e7;
-    }
-    
-    body,
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-    .header {
-        position: sticky;
-        top: 0;
-        display: flex;
-        text-align: left;
-        background: #70120f;
-    }
-    
-    main{
-        height: auto;
-    }
-    
-    .nnav__menu{
-        display: flex;
-    }
+     
     .nnav__menu__item{
-        font-size: 20px;
+        font-size: 22px;
         font-weight: bold;
         list-style: none;
-        margin: 20px 15px;
-    }
-    .nnav__menu__item a{
-        color: #fcf3e1;
-        display: block;
-        text-decoration: none;
+        margin: 22px 18px;
     }
     .gnav__menu{
         display: flex;
-        padding-right: 35px;
+        padding-right: 30px;
     }
     .gnav__menu__item{
         font-size: 18px;
@@ -163,18 +131,6 @@ main{
     .gnav__menu__item a{
         color: #d1d1d1;
         display: block;
-        text-decoration: none;
-    }
-    
-    .content{
-        line-height: 1.6;
-        margin: 0 auto;
-        width: auto;
-        font-size: 18px;
-    }
-    .content a{
-        color: #70120f;
-        border-bottom: solid 2px #825858;
         text-decoration: none;
     }
     
