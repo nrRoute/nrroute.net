@@ -132,4 +132,37 @@ main{
         text-align: left;
         background: #70120f;
     }
+    
+    main{
+        height: 300px;
+    }
+    
+    .nnav__menu{
+        display: flex;
+    }
+    .nnav__menu__item{
+        font-size: 25px;
+        font-weight: bold;
+        list-style: none;
+        margin: 25px 18px;
+    }
+    .nnav__menu__item a{
+        color: #fcf3e1;
+        display: block;
+        text-decoration: none;
+    }
+    .gnav__menu{
+        display: flex;
+        padding-right: 50px;
+    }
+    .gnav__menu__item{
+        font-size: 18px;
+        list-style: none;
+        margin: 18px 12px;
+    }
+    .gnav__menu__item a{
+        color: #d1d1d1;
+        display: block;
+        text-decoration: none;
+    }
 }
