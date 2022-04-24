@@ -18,7 +18,6 @@ body,
     display: flex;
     padding: 40px 20px;
     position: sticky;
-    top: 0;
     text-align:left;
     width: 100%;
 }
