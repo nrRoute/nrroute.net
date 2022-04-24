@@ -114,19 +114,19 @@ main{
 @media screen and (max-width: 440px) {
      
     .nnav__menu__item{
-        font-size: 25px;
+        font-size: 24px;
         font-weight: bold;
         list-style: none;
-        margin: 28px 18px;
+        margin: 28px 15px;
     }
     .gnav__menu{
         display: flex;
         padding-right: 30px;
     }
     .gnav__menu__item{
-        font-size: 18px;
+        font-size: 17px;
         list-style: none;
-        margin: 20px 12px;
+        margin: 18px 12px;
     }
     .gnav__menu__item a{
         color: #d1d1d1;
