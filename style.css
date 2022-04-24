@@ -30,6 +30,8 @@ main{
 .home {
     font-size: 28px;
     font-weight: bold;
+}
+.home a {
     color: #fcf3e1;
     text-decoration: none;
 }
@@ -39,7 +41,7 @@ main{
 }
 
 .gnav__menu__item{
-    font-size: 20px;
+    font-size: 28px;
     list-style: none;
     margin-left: 20px;
 }
