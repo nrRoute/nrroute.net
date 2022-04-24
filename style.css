@@ -17,8 +17,10 @@ body,
     background: #70120f;
     display: flex;
     padding: 40px 20px;
-    position: sticky;
+    position: fixed;
+    justtify-content: space-between;
     width: 100%;
+    z-index: 99;
 }
 
 main{
@@ -26,7 +28,7 @@ main{
 }
 
 .home {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     color: #fcf3e1;
     text-decoration: none;
@@ -34,8 +36,6 @@ main{
 
 .gnav__menu{
     display: flex;
-    padding-right:  55px;
-    vertical-align: middle;
 }
 
 .gnav__menu__item{
@@ -107,7 +107,6 @@ main{
      
     .gnav__menu{
         display: flex;
-        padding-right: 30px;
     }
     .gnav__menu__item{
         font-size: 17px;
