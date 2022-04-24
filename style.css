@@ -16,7 +16,7 @@ body,
 .header{
     background: #70120f;
     display: flex;
-    padding: 40px 20px;
+    padding: 35px 20px;
     position: fixed;
     justtify-content: space-between;
     width: 100%;
