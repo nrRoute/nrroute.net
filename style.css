@@ -110,3 +110,26 @@ main{
     text-align: center;
     background:   #2b2727;
 }
+
+@media screen and (max-width: 480px) {
+    body{
+        margin: 0 auto;
+        padding: 0;
+        font-family: Meiryo, Yu Gothic, sans-serif;
+        background: #e9e7e7;
+    }
+    
+    body,
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .header {
+        position: sticky;
+        top: 0;
+        display: flex;
+        text-align: left;
+        background: #70120f;
+    }
+}
