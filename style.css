@@ -18,7 +18,6 @@ body,
     display: flex;
     padding: 40px 20px;
     position: sticky;
-    text-align:left;
     width: 100%;
 }
 
@@ -34,7 +33,6 @@ main{
     font-size: 30px;
     font-weight: bold;
     list-style: none;
-    margin-left: 18px;
     margin-right: 18px;
 }
 
@@ -46,7 +44,6 @@ main{
 
 .gnav__menu{
     display: flex;
-    width: auto;
     padding-right:  55px;
     vertical-align: middle;
 }
@@ -122,12 +119,10 @@ main{
         font-size: 24px;
         font-weight: bold;
         list-style: none;
-        margin-left: 15px;
         margin-right: 15px;
     }
     .gnav__menu{
         display: flex;
-        width: auto;
         padding-right: 30px;
     }
     .gnav__menu__item{
