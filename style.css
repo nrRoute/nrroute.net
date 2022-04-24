@@ -27,7 +27,6 @@ main{
     
 .nnav__menu{
     display: flex;
-    vertical-align: middle;
 }
 
 .nnav__menu__item{
