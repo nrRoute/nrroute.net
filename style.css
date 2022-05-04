@@ -18,53 +18,13 @@ body,
     display: flex;
     padding: 35px 20px;
     position: fixed;
-    justtify-content: space-between;
+    justify-content: space-between;
     width: 100%;
     z-index: 99;
 }
 
 main{
     height: auto;
-}
-
-.home {
-    font-size: 28px;
-    font-weight: bold;
-}
-.home a {
-    color: #fcf3e1;
-    text-decoration: none;
-}
-
-.gnav__menu{
-    display: flex;
-}
-
-.gnav__menu__item{
-    font-size: 26px;
-    list-style: none;
-    margin-top: 2px;
-    margin-left: 20px;
-}
-
-.gnav__menu__item a{
-    color: #d1d1d1;
-    display: block;
-    text-decoration: none;
-}
-
-.gnav__menu__item a::after {
-    display: block;
-    border-bottom: solid 3px #ffffff;
-    bottom: 0;
-    content: "";
-    transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-    width: 0;
-}
-
-.gnav__menu__item a:hover::after {
-    width: 100%;
 }
 
 .content{
@@ -91,6 +51,36 @@ main{
     border: 0;
 }
 
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom-color: transparent;
+    border-radius: 4px;
+}
+.accordion__item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.accordion__header {
+    align-items: center;
+    display: flex;
+
+    cursor: pointer;
+    padding: 16px;
+}
+.accordion__toggle {
+    margin-right: 12px;
+}
+.accordion__title {
+    flex: 1;
+}
+.accordion__content {
+    display: none;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 16px;
+}
+.accordion__content--selected {
+    display: block;
+}
 
 .footer{
     margin-top: auto;
@@ -104,21 +94,6 @@ main{
 }
 
 @media screen and (max-width: 480px) {
-     
-    .gnav__menu{
-        display: flex;
-    }
-    .gnav__menu__item{
-        font-size: 15px;
-        list-style: none;
-        margin-left: 12px;
-    }
-    .gnav__menu__item a{
-        color: #d1d1d1;
-        display: block;
-        text-decoration: none;
-    }
-    
     .footer{
         margin-top: auto;
         padding-top: 15px;
