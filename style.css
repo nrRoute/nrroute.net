@@ -41,8 +41,9 @@ main{
 }
 
 .gnav__menu__item{
-    font-size: 28px;
+    font-size: 26px;
     list-style: none;
+    margin-top: 2px;
     margin-left: 20px;
 }
 
