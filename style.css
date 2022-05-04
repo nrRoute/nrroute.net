@@ -91,9 +91,6 @@ main{
     border: 0;
 }
 
-.twitter{
-    color: #40ebed !important;
-}
 
 .footer{
     margin-top: auto;
@@ -112,7 +109,7 @@ main{
         display: flex;
     }
     .gnav__menu__item{
-        font-size: 17px;
+        font-size: 15px;
         list-style: none;
         margin-left: 12px;
     }
