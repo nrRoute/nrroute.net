@@ -69,6 +69,7 @@ main{
 .content{
     line-height: 1.6;
     margin: 0 auto;
+    padding: 200px;
     width: 800px;
     font-size:  20px;
 }
