@@ -41,12 +41,12 @@ main {
     font-size:  18px;
 }
 
-.content a{
+.card-text a{
     color: #70120f;
     text-decoration: underline 1.5px #825858;
 }
 
-.content a:hover{
+.card-text a:hover{
     background: #d1d1d1;
 }
 
