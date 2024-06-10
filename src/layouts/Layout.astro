@@ -16,8 +16,10 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="font-sans bg-[#e9e7e7] dark:bg-[#313030] dark:text-gray-50">
-		<slot />
+	<body class="flex flex-col min-h-screen font-sans bg-[#e9e7e7] dark:bg-[#313030] dark:text-gray-50">
+		<div class="grow">
+			<slot />
+		</div>
 		<footer class="flex justify-center pt-5 bg-[#2b2727] h-20 text-gray-200">
 			Copyright &copy; nrRoute All Rights Reserved.
 		</footer>
