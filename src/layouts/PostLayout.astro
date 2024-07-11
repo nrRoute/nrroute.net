@@ -1,0 +1,37 @@
+---
+import Layout from './Layout.astro';
+import Title from '../components/Title.astro';
+import PostCard from '../components/posts/PostCard.astro';
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+    <div class="container h-auto mx-auto max-w-screen-sm dark:prose-dark">
+        <div class="relative flex items-center">
+            <Title title="こんにちは" />
+            <button class="ml-auto rounded-lg border-2 border-current" id="button">テーマ切り替え</button>
+        </div>
+        <PostCard title={frontmatter.title} date={frontmatter.date}>
+            <slot />
+        </PostCard>
+        <script>
+			function toggleDarkMode() {
+				if (document.documentElement.classList.contains('dark')) {
+					document.documentElement.classList.remove('dark');
+					localStorage.theme = 'light';
+				} else {
+					document.documentElement.classList.add('dark');
+					localStorage.theme = 'dark';
+				}
+			}
+			document.getElementById('button')?.addEventListener('click', toggleDarkMode);
+			window.addEventListener('DOMContentLoaded', () => {
+				if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+			});
+		</script>
+    </div>
+</Layout>
