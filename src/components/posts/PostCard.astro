@@ -1,21 +1,36 @@
 ---
 import Prose from "../Prose.astro";
 const { title } = Astro.props;
-const { date } = Astro.props;
+const { created } = Astro.props;
+const { modified } = Astro.props;
+
+const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
+	dateStyle: "medium",
+});
+
+const formattedCreated = dateFormatter.format(new Date(created));
+
+const isModified = modified !== "";
+const formattedModified = isModified ? dateFormatter.format(new Date(modified)) : "";
 ---
 
 <div class="card w-auto dark:card-dark">
-    <div class="relative flex items-center">
+    <div class="relative flex items-center justify-center">
         <h1 class="mb-3 text-2xl font-medium">
             {title}
         </h1>
-        <div class="mb-3 ml-auto">
-            {date}
-        </div>
     </div>
-	<Prose>
-		<slot />
-	</Prose>
+	<div class="grid grid-cols-2 mb-3 text-center">
+		<div>作成日: {formattedCreated}</div>
+		{
+			isModified ? <div>更新日: {formattedModified}</div> : ""
+		}
+	</div>
+	<div id="content" class="border-t">
+		<Prose>
+			<slot />
+		</Prose>
+	</div>
 </div>
 <style>
 	@tailwind base;
