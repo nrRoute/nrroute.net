@@ -8,22 +8,3 @@ const { title } = Astro.props;
 	</h2>
 	<slot />
 </div>
-<style>
-	@tailwind base;
-	@tailwind components;
-	@tailwind utilities;
-
-	@layer components {
-		.card {
-			background-color: theme('colors.white');
-			border-radius: theme('borderRadius.md');
-			border-width: theme('borderWidth.DEFAULT');
-			border-color: theme('colors.gray.300');
-			padding: theme('spacing.4');
-			margin-bottom: theme('spacing.4');
-		}
-		.card-dark {
-			background-color: #313030;
-		}
-	}
-</style>

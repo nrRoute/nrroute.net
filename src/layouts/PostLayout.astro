@@ -1,37 +1,36 @@
 ---
 import Layout from './Layout.astro';
-import Title from '../components/Title.astro';
-import PostCard from '../components/posts/PostCard.astro';
+import Prose from '../components/Prose.astro';
+
 const { frontmatter } = Astro.props;
+
+const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
+	dateStyle: "medium",
+});
+
+const formattedCreated = dateFormatter.format(new Date(frontmatter.created));
+
+const isModified = frontmatter.modified !== "";
+const formattedModified = isModified ? dateFormatter.format(new Date(frontmatter.modified)) : "";
 ---
 
-<Layout title={frontmatter.title}>
-    <div class="container h-auto mx-auto max-w-screen-sm dark:prose-dark">
-        <div class="relative flex items-center">
-            <Title title="こんにちは" />
-            <button class="ml-auto rounded-lg border-2 border-current" id="button">テーマ切り替え</button>
-        </div>
-        <PostCard title={frontmatter.title} created={frontmatter.created} modified={frontmatter.modified}>
-            <slot />
-        </PostCard>
-        <script>
-			function toggleDarkMode() {
-				if (document.documentElement.classList.contains('dark')) {
-					document.documentElement.classList.remove('dark');
-					localStorage.theme = 'light';
-				} else {
-					document.documentElement.classList.add('dark');
-					localStorage.theme = 'dark';
-				}
+<Layout title={frontmatter.title} description={frontmatter.description}>
+	<div class="card w-auto dark:card-dark">
+		<div class="relative flex items-center justify-center">
+			<h1 class="mb-3 text-2xl font-medium">
+				{frontmatter.title}
+			</h1>
+		</div>
+		<div class="grid grid-cols-2 mb-3 text-center">
+			<div>作成日: {formattedCreated}</div>
+			{
+				isModified ? <div>更新日: {formattedModified}</div> : ""
 			}
-			document.getElementById('button')?.addEventListener('click', toggleDarkMode);
-			window.addEventListener('DOMContentLoaded', () => {
-				if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-					document.documentElement.classList.add('dark');
-				} else {
-					document.documentElement.classList.remove('dark');
-				}
-			});
-		</script>
-    </div>
+		</div>
+		<div id="content" class="border-t">
+			<Prose>
+				<slot />
+			</Prose>
+		</div>
+	</div>
 </Layout>

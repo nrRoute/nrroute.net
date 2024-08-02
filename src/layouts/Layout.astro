@@ -1,34 +1,53 @@
 ---
+import Meta from '../components/Meta.astro';
+import Title from '../components/Title.astro';
+import '../styles/globals.css';
+
 interface Props {
 	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="ja">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="author" content="nrRoute" />
-		<meta name="description" content="nrRoute's Page" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="og:title" content={title} />
-		<meta name="og:description" content="nrRoute's Page" />
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:site" content="@nrRoute" />
-		<meta name="twitter:creator" content="@nrRoute" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content="nrRoute's Page" />
+		<Meta title={title} description={description} />
 		<title>{title}</title>
 	</head>
 	<body class="flex flex-col min-h-screen font-sans bg-[#e9e7e7] dark:bg-[#313030] dark:text-gray-50">
 		<div class="grow">
-			<slot />
+			<div class="container h-auto mx-auto max-w-screen-sm dark:prose-dark">
+				<div class="relative flex items-center">
+					<Title title="こんにちは" />
+					<button class="ml-auto rounded-lg border-2 border-current" id="button">テーマ切り替え</button>
+				</div>
+				<slot />
+			</div>
 		</div>
 		<footer class="flex justify-center pt-5 bg-[#2b2727] h-20 text-gray-200">
-			Copyright &copy; nrRoute All Rights Reserved.
+			Copyright &copy; nrRoute
 		</footer>
 	</body>
+	<script>
+		function toggleDarkMode() {
+			if (document.documentElement.classList.contains('dark')) {
+				document.documentElement.classList.remove('dark');
+				localStorage.theme = 'light';
+			} else {
+				document.documentElement.classList.add('dark');
+				localStorage.theme = 'dark';
+			}
+		}
+		document.getElementById('button')?.addEventListener('click', toggleDarkMode);
+		window.addEventListener('DOMContentLoaded', () => {
+			if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		});
+	</script>
 </html>

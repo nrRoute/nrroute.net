@@ -1,0 +1,19 @@
+---
+interface Props {
+    title: string;
+    description: string;
+}
+
+const props = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="author" content="nrRoute" />
+<meta name="description" content={props.description} />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={`${props.title} | nrRoute`} />
+<meta property="og:description" content={props.description} />
+<meta property="og:url" content={Astro.url} />

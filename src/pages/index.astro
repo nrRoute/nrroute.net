@@ -1,70 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="nrRoute">
-	<div class="container h-auto mx-auto max-w-screen-sm dark:prose-dark">
-		<div class="relative flex items-center">
-			<Title title="こんにちは" />
-			<button class="ml-auto rounded-lg border-2 border-current" id="button">テーマ切り替え</button>
-		</div>
-		<Card title="About">
-			<p>ギリギリ</p>
-		</Card>
-		<Card title="昔作ったもの">
-			<div class="mb-2">
-				<h6 class="font-medium mb-1">マインクラフトの配布マップ</h6>
-				<ul class="list-inside">
-					<li>
-						<a href="http://world-minecraft.com/archives/87752875.html">3600+1400m Athletic</a>
-					</li>
-					<li>
-						<a href="http://world-minecraft.com/archives/54973436.html">Travelers 1</a>
-					</li>
-				</ul>
-			</div>
-			<div>
-				<h6 class="font-medium mb-1">ibis Networkで作ったもの</h6>
-				<ul>
-					<li>Sunrise</li>
-					<li>Beyond The Sign</li>
-					<li>Warmth</li>
-				</ul>
-			</div>
-		</Card>
-		<Card title="Links">
+<Layout title="nrRoute" description='nrRouteのページ'>
+	<Card title="About">
+		<p>ギリギリ</p>
+	</Card>
+	<Card title="昔作ったもの">
+		<div class="mb-2">
+			<h6 class="font-medium mb-1">マインクラフトの配布マップ</h6>
 			<ul class="list-inside">
 				<li>
-					<a href="https://twitter.com/nrRoute/" target="_blank" rel="noopener noreferrer">Twitter</a>
+					<a href="http://world-minecraft.com/archives/87752875.html">3600+1400m Athletic</a>
 				</li>
 				<li>
-					<a href="https://nrroute.hatenablog.com/" target="_blank" rel="noopener noreferrer">ブログ</a>
-				</li>
-				<li>
-					<a href="https://www.amazon.co.jp/hz/wishlist/ls/14D9L62NO9O7Q/" target="_blank" rel="noopener noreferrer">ほしいものリスト</a>
+					<a href="http://world-minecraft.com/archives/54973436.html">Travelers 1</a>
 				</li>
 			</ul>
-		</Card>
-		<script>
-			function toggleDarkMode() {
-				if (document.documentElement.classList.contains('dark')) {
-					document.documentElement.classList.remove('dark');
-					localStorage.theme = 'light';
-				} else {
-					document.documentElement.classList.add('dark');
-					localStorage.theme = 'dark';
-				}
-			}
-			document.getElementById('button')?.addEventListener('click', toggleDarkMode);
-			window.addEventListener('DOMContentLoaded', () => {
-				if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-					document.documentElement.classList.add('dark');
-				} else {
-					document.documentElement.classList.remove('dark');
-				}
-			});
-		</script>
-	</div>
+		</div>
+		<div>
+			<h6 class="font-medium mb-1">ibis Networkで作ったもの</h6>
+			<ul>
+				<li>Sunrise</li>
+				<li>Beyond The Sign</li>
+				<li>Warmth</li>
+			</ul>
+		</div>
+	</Card>
+	<Card title="Links">
+		<ul class="list-inside">
+			<li>
+				<a href="https://twitter.com/nrRoute/" target="_blank" rel="noopener noreferrer">Twitter</a>
+			</li>
+			<li>
+				<a href="https://nrroute.hatenablog.com/" target="_blank" rel="noopener noreferrer">ブログ</a>
+			</li>
+			<li>
+				<a href="https://www.amazon.co.jp/hz/wishlist/ls/14D9L62NO9O7Q/" target="_blank" rel="noopener noreferrer">ほしいものリスト</a>
+			</li>
+		</ul>
+	</Card>
 </Layout>

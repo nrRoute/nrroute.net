@@ -1,6 +1,7 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 title: "アニメの記録"
+description: "アニメの記録"
 created: 2024-07-07
 modified: 2024-07-21
 ---
