@@ -1,12 +1,23 @@
 ---
-const { url, title, description } = Astro.props;
+const { url, title, description, created } = Astro.props;
+
+const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
+	dateStyle: "medium",
+});
+
+const formattedCreated = dateFormatter.format(new Date(created));
 ---
 
 <div class="card w-auto dark:card-dark">
-	<h2 class="mb-2 text-xl font-medium">
-        <a href={url}>
-		    {title}
-        </a>
-	</h2>
+    <div class="relative flex items-center">
+        <h2 class="mb-2 text-xl font-medium">
+            <a href={url}>
+                {title}
+            </a>
+        </h2>
+        <div class="ml-auto">
+            {formattedCreated}
+        </div>
+    </div>
     <p>{description}</p>
 </div>
