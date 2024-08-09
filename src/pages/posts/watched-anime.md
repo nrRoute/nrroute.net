@@ -3,16 +3,16 @@ layout: "../../layouts/PostLayout.astro"
 title: "アニメの記録"
 description: "アニメの記録"
 created: 2024-07-07
-modified: 2024-07-21
+modified: 2024-08-10
 ---
 
 ## 今見ている
 
-- ARIA The ORIGINATION
 - HAPPY☆LESSON THE TV
 - 物語シリーズ オフ&モンスターシーズン
 - 負けヒロインが多すぎる！
 - 菜なれ花なれ
+- 先輩はおとこのこ
 
 ## 見た
 
@@ -30,6 +30,7 @@ modified: 2024-07-21
 - 小林さんちのメイドラゴンS
 - ARIA The ANIMATION
 - ARIA The NATURAL
+- ARIA The ORIGINATION
 - ぼっち・ざ・ろっく！
 - ダンガンロンパ 希望の学園と絶望の高校生 The Animation
 - リコリス・リコイル
@@ -88,4 +89,5 @@ modified: 2024-07-21
 - パプリカ
 - リズと青い鳥
 - サマーウォーズ
-- 映画ドラえもんのび太と新鉄人兵団
+- 映画ドラえもん 新・のび太と鉄人兵団
+- ARIA The AVVENIRE
