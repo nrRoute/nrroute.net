@@ -7,7 +7,9 @@ const posts = await Astro.glob('./*.{md, mdx}');
 
 <Layout title="記事一覧" description="">
     {
-        posts.map((post) => (
+        posts
+        .sort((a, b) => Number(new Date(b.frontmatter.created)) - Number(new Date(a.frontmatter.created)))
+        .map((post) => (
             <PostCard
                 url={post.url}
                 title={post.frontmatter.title}
