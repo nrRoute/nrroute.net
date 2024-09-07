@@ -1,0 +1,36 @@
+---
+layout: "../../layouts/PostLayout.astro"
+title: "好きなアルバム"
+description: "nrRouteが好きなアルバムです"
+created: 2024-09-05
+modified: ""
+---
+
+年代順です。
+- 大貫妙子 - SUNSHOWER (1977)
+- CASIOPEA - MINT JAMS (1982)
+- 山下達郎 - FOR YOU (1982)
+- CARIOCA - Kartik (1985)
+- T-SQUARE - R・E・S・O・R・T (1985)
+- T-SQUARE - S・P・O・R・T・S (1986)
+- 吉村弘 - Green (1987)
+- 角松敏生 - Sea Is A Lady (1987)
+- 野田ユカ - カリブの夢 (1989)
+- 平沢進 - Aurora (1994)
+- Queen - Made In Heaven (1995)
+- 平沢進 - Sim City (1995)
+- benzo - benzoの場合 (1998)
+- 本田雅人 - Real-Fusion (2000)
+- Cornelius - POINT (2001)
+- Serani Poji - ワンルームサバイバル (2002)
+- capsule - S.F. sound furniture (2004)
+- Plus-Tech Squeeze Box - catooom! (2004)
+- Shibayan Records - TOHO BOSSA NOVA 2 (2013)
+- tofubeats - lost decade (2013)
+- BUMP OF CHICKEN - RAY (2014)
+- 婦人倶楽部 - フジンカラー (2016)
+- Tsudio Studio - Port Island (2018)
+- Yogee New Waves - BLUEHARLEM (2019)
+- 月ノ美兎 - 月の兎はヴァーチュアルの夢をみる (2021)
+- パソコン音楽クラブ - See-Voice (2021)
+- Local Visions, 長瀬有花 - OACL (2023)
