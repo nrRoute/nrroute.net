@@ -20,6 +20,7 @@ modified: ""
 - Queen - Made In Heaven (1995)
 - 平沢進 - Sim City (1995)
 - benzo - benzoの場合 (1998)
+- ピチカート・ファイヴ - Pizzicato Five (1999)
 - 本田雅人 - Real-Fusion (2000)
 - Cornelius - POINT (2001)
 - Serani Poji - ワンルームサバイバル (2002)
