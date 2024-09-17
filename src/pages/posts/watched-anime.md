@@ -3,16 +3,16 @@ layout: "../../layouts/PostLayout.astro"
 title: "アニメの記録"
 description: "アニメの記録"
 created: 2024-07-07
-modified: 2024-08-10
+modified: 2024-09-17
 ---
 
 ## 今見ている
 
-- HAPPY☆LESSON THE TV
 - 物語シリーズ オフ&モンスターシーズン
 - 負けヒロインが多すぎる！
 - 菜なれ花なれ
 - 先輩はおとこのこ
+- SSSS.GRIDMAN
 
 ## 見た
 
@@ -51,6 +51,8 @@ modified: 2024-08-10
 - かげじつ！
 - 魔法少女にあこがれて
 - きんいろモザイク
+- HAPPY☆LESSON THE TV
+- ナースウィッチ小麦ちゃんマジカルて
 
 ## だいたい見た
 
@@ -92,3 +94,5 @@ modified: 2024-08-10
 - 映画ドラえもん 新・のび太と鉄人兵団
 - ARIA The AVVENIRE
 - 劇場版カードキャプターさくら
+- ルックバック
+- 言の葉の庭
