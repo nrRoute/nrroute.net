@@ -15,6 +15,7 @@ const { title, description } = Astro.props;
 <html lang="ja">
 	<head>
 		<Meta title={title} description={description} />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 		<title>{title}</title>
 	</head>
 	<body class="flex flex-col min-h-screen font-sans bg-[#e9e7e7] dark:bg-[#313030] dark:text-gray-50">
