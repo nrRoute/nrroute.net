@@ -3,14 +3,13 @@ layout: "../../layouts/PostLayout.astro"
 title: "アニメの記録"
 description: "アニメの記録"
 created: 2024-07-07
-modified: 2024-09-30
+modified: 2024-10-07
 ---
 
 ## 今見ている
 
 - 物語シリーズ オフ&モンスターシーズン
-- 先輩はおとこのこ
-- SSSS.DYNAZENON
+- N・H・Kにようこそ!
 
 ## 見た
 
@@ -52,9 +51,11 @@ modified: 2024-09-30
 - HAPPY☆LESSON THE TV
 - ナースウィッチ小麦ちゃんマジカルて
 - SSSS.GRIDMAN
+- SSSS.DYNAZENON
 - Garden of Remembrance
 - 菜なれ花なれ
 - 負けヒロインが多すぎる！
+- 先輩はおとこのこ
 
 ## だいたい見た
 
