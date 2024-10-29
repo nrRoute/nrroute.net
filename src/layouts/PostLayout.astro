@@ -1,6 +1,6 @@
 ---
-import Layout from './Layout.astro';
-import Prose from '../components/Prose.astro';
+import Prose from "../components/Prose.astro";
+import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
 
@@ -11,7 +11,9 @@ const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
 const formattedCreated = dateFormatter.format(new Date(frontmatter.created));
 
 const isModified = frontmatter.modified !== "";
-const formattedModified = isModified ? dateFormatter.format(new Date(frontmatter.modified)) : "";
+const formattedModified = isModified
+	? dateFormatter.format(new Date(frontmatter.modified))
+	: "";
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
