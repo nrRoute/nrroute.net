@@ -7,7 +7,11 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": []
+		"ignore": [
+			"./node_modules/**",
+			"./dist/**",
+			"./.astro/**"
+		]
 	},
 	"formatter": {
 		"enabled": true,
@@ -24,7 +28,8 @@
 	},
 	"javascript": {
 		"formatter": {
-			"quoteStyle": "double"
+			"quoteStyle": "double",
+			"semicolons": "always"
 		},
 		"globals": ["Astro"]
 	}
