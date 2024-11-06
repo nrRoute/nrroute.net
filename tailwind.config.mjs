@@ -14,6 +14,11 @@ export default {
 				'link-light': '#f6e05e',
 			},
 			typography: (theme) => ({
+				DEFAULT: {
+					css: {
+						maxWidth: '80ch',
+					}
+				},
 				dark: {
 					css: {
 						a: {
