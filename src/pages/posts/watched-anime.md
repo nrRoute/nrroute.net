@@ -3,7 +3,7 @@ layout: "../../layouts/PostLayout.astro"
 title: "アニメの記録"
 description: "アニメの記録"
 created: 2024-07-07
-modified: 2024-10-07
+modified: 2024-11-20
 ---
 
 ## 今見ている
@@ -11,7 +11,6 @@ modified: 2024-10-07
 - N・H・Kにようこそ!
 - ラブライブ！スーパースター!!
 - ダンダダン
-- BanG Dream! It's MyGO!!!!!
 
 ## 見た
 
@@ -59,6 +58,7 @@ modified: 2024-10-07
 - 負けヒロインが多すぎる！
 - 先輩はおとこのこ
 - ちょびっツ
+- BanG Dream! It's MyGO!!!!!
 
 ## だいたい見た
 
