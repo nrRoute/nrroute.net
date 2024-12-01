@@ -23,17 +23,17 @@ const formattedModified = isModified
 				{frontmatter.title}
 			</h1>
 		</div>
-		<div class="grid grid-cols-2 mb-3 text-center">
+		<div class="grid grid-cols-2 text-center">
 			<div>作成日: {formattedCreated}</div>
 			{
 				isModified ? <div>更新日: {formattedModified}</div> : ""
 			}
 		</div>
-		<div id="content" class="border-t">
-			<Prose>
-				<slot />
-			</Prose>
-		</div>
+	</div>
+	<div id="content" class="border-b border-current">
+		<Prose>
+			<slot />
+		</Prose>
 	</div>
 	<div class="my-5 ml-auto px-3">
 		<a href="/posts">記事一覧に戻る</a>

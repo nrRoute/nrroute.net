@@ -4,9 +4,9 @@
 
 @layer components {
 	.card {
-		@apply bg-white rounded-md border border-gray-300 p-4 mb-4;
+		@apply bg-transparent rounded-md border border-current p-4 mb-4;
 	}
 	.card-dark {
-		@apply bg-[#313030];
+		@apply bg-[#313030] border-current;
 	}
 }
