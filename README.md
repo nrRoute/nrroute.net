@@ -1,2 +1,7 @@
 # nrroute.github.io
-つくっています
+
+# How to use
+```sh
+pnpm i
+pnpm dev
+```
