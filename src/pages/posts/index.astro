@@ -2,7 +2,16 @@
 import PostCard from "../../components/PostCard.astro";
 import Layout from "../../layouts/Layout.astro";
 
-const posts = await Astro.glob("./*.{md, mdx}");
+interface Post {
+  url: string;
+  frontmatter: {
+    title: string;
+    description: string;
+    created: string;
+  };
+}
+
+const posts: Post[] = await Object.values(import.meta.glob<Post>("./*.md", { eager: true }));
 ---
 
 <Layout title="記事一覧" description="">
