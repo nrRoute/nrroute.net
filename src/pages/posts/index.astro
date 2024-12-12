@@ -1,29 +1,22 @@
 ---
+import { getCollection } from "astro:content";
 import PostCard from "../../components/PostCard.astro";
 import Layout from "../../layouts/Layout.astro";
 
-interface Post {
-  url: string;
-  frontmatter: {
-    title: string;
-    description: string;
-    created: string;
-  };
-}
-
-const posts: Post[] = await Object.values(import.meta.glob<Post>("./*.md", { eager: true }));
+const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.created.valueOf() - a.data.created.valueOf()
+);
 ---
 
 <Layout title="記事一覧" description="">
     {
         posts
-        .sort((a, b) => Number(new Date(b.frontmatter.created)) - Number(new Date(a.frontmatter.created)))
         .map((post) => (
             <PostCard
-                url={post.url}
-                title={post.frontmatter.title}
-                description={post.frontmatter.description}
-                created={post.frontmatter.created}
+                url={`/posts/${post.id}`}
+                title={post.data.title}
+                description={post.data.description}
+                created={post.data.created}
             />
         ))
     }
