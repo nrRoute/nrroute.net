@@ -32,7 +32,10 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
-	font-family: ui-sans-serif, system-ui, sans-serif,
+	font-family:
+		"Helvetica Neue", "Helvetica",
+		"Hiragino Kaku Gothic ProN", "Hiragino Sans",
+		ui-sans-serif, system-ui, sans-serif,
 		"Apple Color Emoji", "Segoe UI Emoji",
 		"Segoe UI Symbol", "Noto Color Emoji";
 	line-height: inherit;
