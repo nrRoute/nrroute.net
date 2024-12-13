@@ -1,6 +1,7 @@
 ---
 import Meta from "@/components/Meta.astro";
 import Title from "@/components/Title.astro";
+import Footer from "@/components/Footer.astro";
 import "@/styles/global.css";
 
 interface Props {
@@ -18,37 +19,37 @@ const { title, description } = Astro.props;
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<title>{title}</title>
 	</head>
-	<body class="flex flex-col min-h-screen font-sans bg-[#e9e7e7] dark:bg-[#313030] dark:text-gray-50">
+	<body>
 		<div class="grow">
-			<div class="container h-auto mx-auto max-w-screen-md dark:prose-dark">
+			<div class="container h-auto max-w-screen-md">
 				<div class="relative flex items-center">
 					<Title title="こんにちは" />
-					<button class="ml-auto px-1 rounded-lg border-2 border-current" id="button">テーマ切り替え</button>
 				</div>
 				<slot />
 			</div>
 		</div>
-		<footer class="flex justify-center pt-5 h-20">
-			Copyright &copy; nrRoute
-		</footer>
+		<Footer />
 	</body>
-	<script>
-		function toggleDarkMode() {
-			if (document.documentElement.classList.contains('dark')) {
-				document.documentElement.classList.remove('dark');
-				localStorage.theme = 'light';
-			} else {
-				document.documentElement.classList.add('dark');
-				localStorage.theme = 'dark';
-			}
-		}
-		document.getElementById('button')?.addEventListener('click', toggleDarkMode);
-		window.addEventListener('DOMContentLoaded', () => {
-			if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-				document.documentElement.classList.add('dark');
-			} else {
-				document.documentElement.classList.remove('dark');
-			}
-		});
-	</script>
 </html>
+
+<style>
+	.grow {
+		flex-grow: 1;
+	}
+
+	.container {
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: 2rem;
+		padding-left: 2rem;
+	}
+
+	.h-auto {
+		height: auto;
+	}
+
+	.max-w-screen-md {
+		max-width: 768px;
+	}
+</style>

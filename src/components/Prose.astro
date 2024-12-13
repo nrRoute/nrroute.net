@@ -1,9 +1,57 @@
-<article class="prose prose-neutral dark:prose-invert
-    prose-h1:font-bold prose-h1:text-2xl
-    prose-h2:font-medium prose-h2:text-xl prose-h2:my-3
-    prose-h3:font-medium prose-h3:text-lg prose-h3:my-2
-    prose-p:my-2
-    prose-ul:list-outside prose-ul:list-disc prose-ul:my-0
-    prose-li:my-0">
-    <slot />
+<article id="post">
+  <slot />
 </article>
+
+<style is:global>
+
+  #post {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    & h1 {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+      margin-top: 1.25rem;
+      margin-bottom: 1.25rem;
+      border-bottom-width: 2px;
+      border-bottom-color: currentColor;
+    }
+
+    & h2 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin-top: 1.25rem;
+      margin-bottom: 1rem;
+      border-bottom-width: 1px;
+      border-bottom-color: currentColor;
+    }
+
+    & h3 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    & p {
+      line-height: 1.75rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    & ul {
+      margin-top: 0;
+      margin-bottom: 0;
+      list-style-position: outside;
+      list-style-type: disc;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    & li {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>

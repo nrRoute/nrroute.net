@@ -10,7 +10,7 @@ import Layout from "../layouts/Layout.astro";
 	</Card>
 	<Card title="昔作ったもの">
 		<div class="mb-2">
-			<h6 class="font-medium mb-1">マインクラフトの配布マップ</h6>
+			<h4 class="mb-1">マインクラフトの配布マップ</h4>
 			<ul class="list-inside">
 				<li>
 					<a href="http://world-minecraft.com/archives/87752875.html">3600+1400m Athletic</a>
@@ -21,7 +21,7 @@ import Layout from "../layouts/Layout.astro";
 			</ul>
 		</div>
 		<div>
-			<h6 class="font-medium mb-1">ibis Networkで作ったもの</h6>
+			<h4 class="font-medium mb-1">ibis Networkで作ったもの</h4>
 			<ul>
 				<li>Sunrise</li>
 				<li>Beyond The Sign</li>
@@ -43,3 +43,23 @@ import Layout from "../layouts/Layout.astro";
 		</ul>
 	</Card>
 </Layout>
+
+<style>
+	.list-inside {
+		list-style-position: inside;
+	}
+
+	.mb-2 {
+		margin-bottom: 0.5rem;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.mb-1 {
+		margin-bottom: 0.25rem;
+	}
+</style>

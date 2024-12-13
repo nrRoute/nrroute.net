@@ -8,16 +8,30 @@ const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
 const formattedCreated = dateFormatter.format(created);
 ---
 
-<div class="card w-auto dark:card-dark">
-    <div class="relative flex items-center">
-        <h2 class="mb-2 text-xl font-medium">
-            <a href={url}>
-                {title}
-            </a>
-        </h2>
-        <div class="ml-auto">
-            {formattedCreated}
-        </div>
+<div class="card w-auto">
+  <div class="relative flex items-center">
+    <h2 class="mb-2 text-xl">
+      <a href={url}>
+        {title}
+      </a>
+    </h2>
+    <div class="ml-auto">
+      {formattedCreated}
     </div>
-    <p>{description}</p>
+  </div>
+  <p>{description}</p>
 </div>
+
+<style>
+  .mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .text-xl {
+    line-height: 1.75rem;
+  }
+
+  .ml-auto {
+    margin-left: auto;
+  }
+</style>

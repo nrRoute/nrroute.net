@@ -9,15 +9,15 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <Layout title="記事一覧" description="">
-    {
-        posts
-        .map((post) => (
-            <PostCard
-                url={`/posts/${post.id}`}
-                title={post.data.title}
-                description={post.data.description}
-                created={post.data.created}
-            />
-        ))
-    }
+  {
+    posts
+    .map((post) => (
+      <PostCard
+        url={`/posts/${post.id}`}
+        title={post.data.title}
+        description={post.data.description}
+        created={post.data.created}
+      />
+    ))
+  }
 </Layout>
