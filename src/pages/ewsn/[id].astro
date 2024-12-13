@@ -1,0 +1,58 @@
+---
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"ewsn">;
+
+export async function getStaticPaths() {
+	const posts = await getCollection("ewsn");
+	return posts.map((post) => ({
+		params: { id: post.id },
+		props: post,
+	}));
+}
+
+const post = Astro.props;
+
+const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
+	dateStyle: "medium",
+});
+
+const formattedCreated = dateFormatter.format(post.data.created);
+
+const formattedModified = dateFormatter.format(post.data.modified);
+
+const { Content } = await render(post);
+---
+
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8" />
+  <meta name="author" content="ewsn" />
+  <meta name="description" content={post.data.description} />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <meta name="generator" content={Astro.generator} />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={post.data.title} />
+  <meta property="og:description" content={post.data.description} />
+  <meta property="og:url" content={Astro.url} />
+  <body>
+    <div class="">
+      <div class="">
+        <h1 class="">
+          {post.data.title}
+        </h1>
+      </div>
+      <div class="">
+        <div>作成日: {formattedCreated}</div>
+        {
+          post.data.modified ? <div>更新日: {formattedModified}</div> : ""
+        }
+      </div>
+    </div>
+    <div id="content" class="">
+      <Content />
+    </div>
+  </body>
+</html>
