@@ -4,10 +4,10 @@ import sitemap from '@astrojs/sitemap';
 
 import mdx from '@astrojs/mdx';
 
-import playformCompress from '@playform/compress';
+import playformInline from '@playform/inline';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nrroute.github.io',
-  integrations: [sitemap(), mdx(), playformCompress()]
+  integrations: [sitemap(), mdx(), playformInline()]
 });
