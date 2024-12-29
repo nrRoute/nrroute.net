@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import Prose from "@/components/Prose.astro";
 
 type Props = CollectionEntry<"ewsn">;
 
@@ -39,22 +40,81 @@ const { Content } = await render(post);
     <meta property="og:url" content={Astro.url} />
     <title>{post.data.title}</title>
   </head>
-  <body>
-    <div class="">
-      <div class="">
-        <h1 class="">
+  <body class="container">
+    <div>
+      <div>
+        <h1>
           {post.data.title}
         </h1>
       </div>
-      <div class="">
+      <div>
         <div>作成日: {formattedCreated}</div>
         {
           post.data.modified ? <div>更新日: {formattedModified}</div> : ""
         }
       </div>
     </div>
-    <div id="content" class="">
-      <Content />
+    <div id="content">
+      <Prose>
+        <Content />
+      </Prose>
     </div>
   </body>
 </html>
+<style>
+*,
+:before,
+:after {
+	box-sizing: border-box;
+	border-width: 0;
+	border-style: solid;
+	border-color: #e5e7eb;
+}
+
+html {
+  color: #000000;
+	line-height: 1.5;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	line-height: inherit;
+	margin: 0;
+	min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+@media (min-width: 640px) {
+	.container {
+		max-width: 640px;
+	}
+}
+@media (min-width: 768px) {
+	.container {
+		max-width: 768px;
+	}
+}
+@media (min-width: 1024px) {
+	.container {
+		max-width: 768px;
+	}
+}
+@media (min-width: 1280px) {
+	.container {
+		max-width: 768px;
+	}
+}
+@media (min-width: 1536px) {
+	.container {
+		max-width: 768px;
+	}
+}
+</style>
