@@ -2,17 +2,18 @@
 
 # Setup
 ```sh
-pnpm i
-pnpm dev
+bun i
+bun --bun dev
 ```
 
 # Build
 ```sh
-pnpm build
-pnpm preview
+bun --bun run build
+bun --bun run preview
 ```
 
 # Lint & Format
 ```sh
-pnpm check
+bun --bun run check
+bun --bun run check --fix # auto fix
 ```

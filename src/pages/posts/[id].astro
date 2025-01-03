@@ -7,17 +7,17 @@ import Layout from "@/layouts/Layout.astro";
 type Props = CollectionEntry<"blog">;
 
 export async function getStaticPaths() {
-	const posts = await getCollection("blog");
-	return posts.map((post) => ({
-		params: { id: post.id },
-		props: post,
-	}));
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: post,
+  }));
 }
 
 const post = Astro.props;
 
 const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
-	dateStyle: "medium",
+  dateStyle: "medium",
 });
 
 const formattedCreated = dateFormatter.format(post.data.created);
