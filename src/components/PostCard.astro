@@ -2,7 +2,7 @@
 const { url, title, description, created } = Astro.props;
 
 const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
-	dateStyle: "medium",
+  dateStyle: "medium",
 });
 
 const formattedCreated = dateFormatter.format(created);
@@ -23,6 +23,10 @@ const formattedCreated = dateFormatter.format(created);
 </div>
 
 <style>
+  a {
+    text-decoration: none;
+  }
+
   .mb-2 {
     margin-bottom: 0.5rem;
   }

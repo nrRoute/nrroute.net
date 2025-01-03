@@ -6,17 +6,17 @@ import Prose from "@/components/Prose.astro";
 type Props = CollectionEntry<"ewsn">;
 
 export async function getStaticPaths() {
-	const posts = await getCollection("ewsn");
-	return posts.map((post) => ({
-		params: { id: post.id },
-		props: post,
-	}));
+  const posts = await getCollection("ewsn");
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: post,
+  }));
 }
 
 const post = Astro.props;
 
 const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
-	dateStyle: "medium",
+  dateStyle: "medium",
 });
 
 const formattedCreated = dateFormatter.format(post.data.created);
@@ -54,14 +54,14 @@ const { Content } = await render(post);
         }
       </div>
     </div>
-    <div id="content">
+    <div id="content" class="border-current">
       <Prose>
         <Content />
       </Prose>
     </div>
   </body>
 </html>
-<style>
+<style is:global>
 *,
 :before,
 :after {
@@ -82,6 +82,21 @@ body {
 	line-height: inherit;
 	margin: 0;
 	min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	color: #000000;
+}
+
+.border-current {
+  border-color: currentColor;
 }
 
 .container {

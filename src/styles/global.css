@@ -1,52 +1,50 @@
 :root {
-	--fg: #000000;
-	--bg: #e9e7e7;
-	--accent: var(--primary);
-	--primary: #70120f;
-	--secondary: #f6e05e;
+  --fg: #000000;
+  --bg: #e9e7e7;
+  --accent: var(--primary);
+  --primary: #70120f;
+  --secondary: #f6e05e;
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--fg: #ffffff;
-		--bg: #1a202c;
-		--accent: var(--secondary);
-	}
+  :root {
+    --fg: #ffffff;
+    --bg: #1a202c;
+    --accent: var(--secondary);
+  }
 }
 
 *,
 :before,
 :after {
-	box-sizing: border-box;
-	border-width: 0;
-	border-style: solid;
-	border-color: #e5e7eb;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
 }
 
 html {
-	background: var(--bg);
-	color: var(--fg);
-	line-height: 1.5;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans",
-		ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "-apple-system";
-	line-height: inherit;
-	margin: 0;
-	min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", ui-sans-serif,
+    system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji", "-apple-system";
+  line-height: inherit;
+  margin: 0;
+  min-height: 100vh;
 }
 
-a {
-	color: var(--accent);
-	text-decoration: none;
-}
-
+a,
 a:hover {
-	text-decoration: underline;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 h1,
@@ -56,87 +54,87 @@ h4,
 h5,
 h6,
 p {
-	margin: 0;
-	color: var(--fg);
+  margin: 0;
+  color: var(--fg);
 }
 
 h1 {
-	font-size: 1.875rem;
-	font-weight: 500;
+  font-size: 1.875rem;
+  font-weight: 500;
 }
 
 h2 {
-	font-size: 1.5rem;
-	font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 h3 {
-	font-size: 1.25rem;
-	font-weight: 500;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 h4 {
-	font-size: 1rem;
-	font-weight: 500;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 h5,
 h6 {
-	font-size: 0.875rem;
-	font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .card {
-	background-color: transparent;
-	border-radius: 0.375rem;
-	border-width: 2px;
-	border-color: currentColor;
-	padding: 1rem;
-	margin-bottom: 1rem;
+  background-color: transparent;
+  border-radius: 0.375rem;
+  border-width: 2px;
+  border-color: currentColor;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .w-auto {
-	width: auto;
+  width: auto;
 }
 
 .relative {
-	position: relative;
+  position: relative;
 }
 
 .flex {
-	display: flex;
+  display: flex;
 }
 
 .items-center {
-	align-items: center;
+  align-items: center;
 }
 
 .justify-center {
-	justify-content: center;
+  justify-content: center;
 }
 
 @media (min-width: 640px) {
-	.container {
-		max-width: 640px;
-	}
+  .container {
+    max-width: 640px;
+  }
 }
 @media (min-width: 768px) {
-	.container {
-		max-width: 768px;
-	}
+  .container {
+    max-width: 768px;
+  }
 }
 @media (min-width: 1024px) {
-	.container {
-		max-width: 768px;
-	}
+  .container {
+    max-width: 768px;
+  }
 }
 @media (min-width: 1280px) {
-	.container {
-		max-width: 768px;
-	}
+  .container {
+    max-width: 768px;
+  }
 }
 @media (min-width: 1536px) {
-	.container {
-		max-width: 768px;
-	}
+  .container {
+    max-width: 768px;
+  }
 }
