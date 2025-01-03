@@ -1,7 +1,18 @@
 # nrroute.github.io
 
-# How to use
+# Setup
 ```sh
 pnpm i
 pnpm dev
+```
+
+# Build
+```sh
+pnpm build
+pnpm preview
+```
+
+# Lint & Format
+```sh
+pnpm check
 ```

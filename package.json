@@ -11,8 +11,6 @@
     "check": "biome check ./src",
     "fix": "biome check --fix ./src"
   },
-  "preinstall": "npx only-allow pnpm",
-  "packageManager": "pnpm@9.14.4",
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "^4.0.2",
