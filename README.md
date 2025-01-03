@@ -17,14 +17,3 @@ bun --bun run preview
 bun --bun run check
 bun --bun run check --fix # auto fix
 ```
-
-# Build
-```sh
-pnpm build
-pnpm preview
-```
-
-# Lint & Format
-```sh
-pnpm check
-```
