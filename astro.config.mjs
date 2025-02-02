@@ -8,6 +8,8 @@ import playformInline from '@playform/inline';
 
 import purgecss from 'astro-purgecss';
 
+import rlc from 'remark-link-card';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nrroute.github.io',
@@ -21,5 +23,10 @@ export default defineConfig({
   ],
   build: {
     format: "file",
+  },
+  markdown: {
+    remarkPlugins: [
+      rlc
+    ]
   }
 });

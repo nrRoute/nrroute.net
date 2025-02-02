@@ -1,5 +1,6 @@
 :root {
   --fg: #000000;
+  --fg75: rgba(0, 0, 0, 0.75);
   --bg: #e9e7e7;
   --accent: var(--primary);
   --primary: #70120f;
