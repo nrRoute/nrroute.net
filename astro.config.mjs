@@ -25,6 +25,10 @@ export default defineConfig({
     format: "file",
   },
   markdown: {
+    remarkRehype: {
+      footnoteLabel: "脚注",
+      footnoteLabelTagName: 'h1',
+    },
     remarkPlugins: [
       rlc
     ]

@@ -34,11 +34,18 @@ const { Content } = await render(post);
 				{post.data.title}
 			</h1>
 		</div>
-		<div class="grid grid-cols-2 text-center">
-			<div>作成日: {formattedCreated}</div>
-			{
-				post.data.modified ? <div>更新日: {formattedModified}</div> : ""
-			}
+		{
+			post.data.modified ?
+				<div class="grid grid-cols-2 text-center border-b-2 border-current mb-2">
+					<div>作成日: {formattedCreated}</div>
+					<div>更新日: {formattedModified}</div>
+				</div> :
+				<div class="text-center border-b-2 border-current mb-2">
+					<div>作成日: {formattedCreated}</div>
+				</div>
+		}
+		<div class="text-center">
+			{post.data.description}
 		</div>
 	</div>
 	<div id="content" class="border-b-2 border-current">
@@ -52,6 +59,10 @@ const { Content } = await render(post);
 </Layout>
 
 <style>
+	.mb-2 {
+		margin-bottom: 0.5rem;
+	}
+
 	.mb-3 {
 		margin-bottom: 0.75rem;
 	}
