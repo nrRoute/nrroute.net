@@ -3,13 +3,13 @@
 # Setup
 ```sh
 bun i
-bun --bun dev
+bun run dev
 ```
 
 # Build
 ```sh
-bun --bun run build
-bun --bun run preview
+bun run build
+bun run preview
 ```
 
 # Lint & Format
