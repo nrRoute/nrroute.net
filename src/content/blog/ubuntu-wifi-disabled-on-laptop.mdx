@@ -1,0 +1,79 @@
+---
+title: "ノートパソコンで突然Wi-Fiが無効化される現象への対処法"
+description: "自分のノートパソコン（Ubuntu 24.04.1）のWi-Fiがたまに突然落ちるので対処法を記録する"
+created: 2025-02-19
+---
+
+# はじめに
+
+OSはUbuntu 24.04.1 です。PCはLAVIE N12シリーズ（PC-N1255BZW）です。
+
+# 症状
+
+突然、何の前触れもなく[^1]Wi-Fiに繋がらなくなります。画面右上の「:wireless:」マークが消えてしまい、設定からも「Wi-Fi」の項目が無くなります。
+
+# 原因
+
+## 結論
+
+結論からいうと、下の記事と同じ症状で、無線インタフェースが無効化されていました。
+
+https://bbs.archlinux.org/viewtopic.php?id=204657
+
+## 原因究明と解決
+
+まず、以下を実行。
+
+```sh
+$ ip addr show
+```
+
+IPの一覧が出てきます。自分のPCなら、本来この中にWLANである `wlp0s20f3` がいるのですが、いません。
+
+ネットワークマネージャが起動していないのかと考えて以下を実行。
+
+```sh
+$ systemctl is-enabled systemd-networkd.service
+enabled
+$ systemctl is-active systemd-networkd.service
+active
+```
+
+起動しているようです。接続を開始しようと、以下を実行。
+
+```sh
+$ sudo ip link set wlp0s20f3 up
+Cannot find device "wlp0s20f3"
+```
+
+デバイスが認識されていないらしいです。インタフェースが壊れているのかな？ということでこのエラーメッセージなどで検索すると、先程上げた記事が出てきました。
+この記事にしたがって、無線インタフェースの一覧を表示するコマンドを実行。
+
+```sh
+$ rfkill list
+0: hci0: Bluetooth
+	Soft blocked: no
+	Hard blocked: no
+1: phy0: Wireless LAN
+	Soft blocked: yes
+	Hard blocked: no
+```
+
+ということで、インタフェースが無効化（ソフトブロック）されていました。以下のコマンドでブロックを解除して、無事解決。
+
+```sh
+$ sudo rfkill unblock 1
+```
+
+フォーラムを見ていたところ、こんな[レス](https://bbs.archlinux.org/viewtopic.php?pid=1576375#p1576375)が。
+
+> Is is a laptop? Usually there is Fn+F\<something\> that acts as a "WiFi button", i.e. soft-blocking the WiFi interface. Is there any such button, and might it be that you have pressed it by accident?
+
+`Fn + F<num>` キーを押すと無線LANのオンオフが切り替えられるとのこと。気づかぬ間に押してしまっていたようです。自分のPCだと、`Fn + F2` っぽいです[^2]。
+
+# おわりに
+
+ラップトップ独自の罠にハマってしまったようでした。以前から何度かこの現象が起こっていたので、解決方法がわかって安心です。
+
+[^1]: 何の前触れもなくというのは嘘でした。
+[^2]: この記事を書いている最中に押してみたのですが、なにも起こりませんでした。結局原因はまだはっきりわかっていません。
