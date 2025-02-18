@@ -10,6 +10,8 @@ import purgecss from 'astro-purgecss';
 
 import rlc from 'remark-link-card';
 
+import remarkGemoji from 'remark-gemoji';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nrroute.github.io',
@@ -30,7 +32,8 @@ export default defineConfig({
       footnoteLabelTagName: 'h1',
     },
     remarkPlugins: [
-      rlc
+      rlc,
+      remarkGemoji,
     ]
   }
 });
