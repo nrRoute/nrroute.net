@@ -21,7 +21,7 @@ const { title, description } = Astro.props;
 	</head>
 	<body>
 		<div class="grow">
-			<div class="container h-auto max-w-screen-md">
+			<div class="container h-auto">
 				<div class="relative flex items-center">
 					<Title title="nrRoute" />
 				</div>
@@ -41,15 +41,11 @@ const { title, description } = Astro.props;
 		width: 100%;
 		margin-right: auto;
 		margin-left: auto;
-		padding-right: 1.5rem;
-		padding-left: 1.5rem;
+		padding-right: 1.25rem;
+		padding-left: 1.25rem;
 	}
 
 	.h-auto {
 		height: auto;
-	}
-
-	.max-w-screen-md {
-		max-width: 768px;
 	}
 </style>
