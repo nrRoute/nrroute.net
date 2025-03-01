@@ -7,6 +7,7 @@ import purgecss from 'astro-purgecss';
 import rlc from 'remark-link-card';
 import remarkGemoji from 'remark-gemoji';
 import astroExpressiveCode from 'astro-expressive-code';
+import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
 export default defineConfig({
@@ -38,6 +39,15 @@ export default defineConfig({
     remarkPlugins: [
       rlc,
       remarkGemoji,
+    ],
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          target: '_blank',
+          rel: ['noopener', 'noreferrer'],
+        }
+      ],
     ]
   }
 });

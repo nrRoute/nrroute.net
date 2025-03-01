@@ -11,14 +11,14 @@ const blog = defineCollection({
   }),
 });
 
-const ewsn = defineCollection({
-  loader: glob({ base: "./src/content/ewsn", pattern: "**/*.{md,mdx}" }),
+const pages = defineCollection({
+  loader: glob({ base: "./src/content/pages/", pattern: "**/*.{md,mdx}" }),
   schema: z.object({
     title: z.string(),
-    description: z.string(),
+    description: z.string().optional(),
     created: z.date(),
     modified: z.date().optional(),
   }),
 });
 
-export const collections = { blog, ewsn };
+export const collections = { blog, pages };
