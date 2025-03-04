@@ -14,39 +14,39 @@ const { title, description } = Astro.props;
 
 <!doctype html>
 <html lang="ja">
-	<head>
-		<Meta title={title} description={description} />
-		<link rel="icon" href="/favicon.ico" />
-		<link rel="sitemap" href="/sitemap-index.xml" />
-		<title>{title}</title>
-	</head>
-	<body>
-		<div class="grow">
-			<div class="container h-auto">
-				<div class="relative flex items-center">
-					<Title title="nrRoute" />
-				</div>
-				<slot />
-			</div>
-		</div>
-		<Footer />
-	</body>
+  <head>
+    <Meta title={title} description={description} />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="grow">
+      <div class="container h-auto">
+        <div class="relative flex items-center">
+          <Title title="nrRoute" />
+        </div>
+        <slot />
+      </div>
+    </div>
+    <Footer />
+  </body>
 </html>
 
 <style>
-	.grow {
-		flex-grow: 1;
-	}
+  .grow {
+    flex-grow: 1;
+  }
 
-	.container {
-		width: 100%;
-		margin-right: auto;
-		margin-left: auto;
-		padding-right: 1.25rem;
-		padding-left: 1.25rem;
-	}
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
 
-	.h-auto {
-		height: auto;
-	}
+  .h-auto {
+    height: auto;
+  }
 </style>
