@@ -11,7 +11,7 @@
     "check": "bunx --bun @biomejs/biome check ./src"
   },
   "engines": {
-    "bun": "^1.1.0"
+    "bun": "^1.2.0"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
