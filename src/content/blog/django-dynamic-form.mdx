@@ -1,0 +1,106 @@
+---
+title: "Djangoでフォームの入力欄の追加をする方法（メモ）"
+description: "Djangoでフォームの入力欄を動的に変化させる"
+created: 2025-03-05
+---
+
+# はじめに
+
+これははてなブログに2023年10月10日に投稿した内容を一部修正し変更を加えたものです。古い実装ですが、記録目的で投稿しました。
+
+https://nrroute.hatenablog.com/entry/2023/10/10/234017
+
+Djangoのバージョンは3.2.20です。
+
+# 実装内容
+こちらのサイトを参考にしています。
+
+https://qiita.com/yjn279/items/35899c645875c52a3dec
+
+以下のようなモデルを想定し、`Group` に属する `Member` の管理をするようなビューを作成します。
+
+```python title="models.py"
+from django.db import models
+
+class Group(models.Model):
+    name = models.CharField(max_length=100)
+
+class Member(models.Model):
+    group = models.ForeignKey(Group, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=255)
+```
+
+フォームを作成します。複数必要なので、Formsetを使います。
+外部キーを含むモデルを扱う場合は [`inlineformset_factory`](https://docs.djangoproject.com/en/5.1/topics/forms/modelforms/#inline-formsets) を使います。
+
+```python title="forms.py"
+from django import forms
+
+from .models import Group, Member
+
+MemberFormset = forms.inlineformset_factory(
+    Group, Member, fields=('name', 'email'),
+    extra=0, can_delete=True # 動的に追加できるようにするので、extra=0
+)
+```
+
+ビューです。`pk` で指定した `Group` に関連した `Member` を追加したり、更新するビューを作成します。
+今回は関数ビューを使いました。
+
+```python title="views.py"
+from django.shortcuts import redirect, render, get_object_or_404
+
+from .forms import MemberFormset
+from .models import Group, Member
+
+def member(request, pk):
+    group = get_object_or_404(Group, pk=pk)
+    formset = MemberFormset(request.POST or None, instance=group)
+
+    if request.method == 'POST' and formset.is_valid():
+        formset.save()
+        return redirect('app:member', pk=group.pk)
+
+    context = {
+        'formset': formset,
+        'group': group,
+    }
+
+    return render(request, 'app/member.html', context)
+```
+
+入力欄の追加やデータの編集、submit時の動作を担うJavaScriptです。jQueryを使っています。
+
+```javascript title="script.js"
+$(function() {
+
+    // フォームの追加をする部分は上記の記事と同じなので省略します
+
+    $('#form').submit(function() {
+        const text = $('.text');
+        $('[name=form-TOTAL_FORMS]').val(text.length);
+
+        // それぞれの入力欄の__prefix__をindexで置換する
+        text.each(function(index, element){
+            originalHtml = $(element).html();
+            replacedHtml = $(element).html().replace(/__prefix__/g, index);
+            // empty_formのみ置換の処理を行う
+            if (originalHtml !== replacedHtml) {
+                // valueが消えるのですべての項目に対して保存
+                value_name = $(element).find("#id_form-__prefix__-name").val();
+                value_email = $(element).find("#id_form-__prefix__-email").val();
+                is_delete = $(element).find("#id_form-__prefix__-DELETE").prop('checked');
+                $(element).html(replacedHtml);
+                $(element).find("#id_form-" + index + "-name").val(value_name);
+                $(element).find("#id_form-" + index + "-email").val(value_email);
+                $(element).find("#id_form-" + index + "-DELETE").prop('checked', is_delete);
+            }
+        });
+    });
+});
+```
+
+# あとがき
+元記事の方法2の方だけを載せました。方法1はJavaScriptを用いない実装だったのですが、フォームを追加する度に毎回同期更新するのは非常にUXが悪いので不採用にしました。
+そもそも最近はフロントエンドのフレームワークが充実しているので、あんまりこういうDjangoのテンプレートを用いる実装は求められない気がしますが…
