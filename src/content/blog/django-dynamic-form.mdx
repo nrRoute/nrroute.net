@@ -75,29 +75,29 @@ def member(request, pk):
 ```javascript title="script.js"
 $(function() {
 
-    // フォームの追加をする部分は上記の記事と同じなので省略します
+  // フォームの追加をする部分は上記の記事と同じなので省略します
 
-    $('#form').submit(function() {
-        const text = $('.text');
-        $('[name=form-TOTAL_FORMS]').val(text.length);
+  $('#form').submit(function() {
+    const text = $('.text');
+    $('[name=form-TOTAL_FORMS]').val(text.length);
 
-        // それぞれの入力欄の__prefix__をindexで置換する
-        text.each(function(index, element){
-            originalHtml = $(element).html();
-            replacedHtml = $(element).html().replace(/__prefix__/g, index);
-            // empty_formのみ置換の処理を行う
-            if (originalHtml !== replacedHtml) {
-                // valueが消えるのですべての項目に対して保存
-                value_name = $(element).find("#id_form-__prefix__-name").val();
-                value_email = $(element).find("#id_form-__prefix__-email").val();
-                is_delete = $(element).find("#id_form-__prefix__-DELETE").prop('checked');
-                $(element).html(replacedHtml);
-                $(element).find("#id_form-" + index + "-name").val(value_name);
-                $(element).find("#id_form-" + index + "-email").val(value_email);
-                $(element).find("#id_form-" + index + "-DELETE").prop('checked', is_delete);
-            }
-        });
+    // それぞれの入力欄の__prefix__をindexで置換する
+    text.each(function(index, element){
+      originalHtml = $(element).html();
+      replacedHtml = $(element).html().replace(/__prefix__/g, index);
+      // empty_formのみ置換の処理を行う
+      if (originalHtml !== replacedHtml) {
+        // valueが消えるのですべての項目に対して保存
+        value_name = $(element).find("#id_form-__prefix__-name").val();
+        value_email = $(element).find("#id_form-__prefix__-email").val();
+        is_delete = $(element).find("#id_form-__prefix__-DELETE").prop('checked');
+        $(element).html(replacedHtml);
+        $(element).find("#id_form-" + index + "-name").val(value_name);
+        $(element).find("#id_form-" + index + "-email").val(value_email);
+        $(element).find("#id_form-" + index + "-DELETE").prop('checked', is_delete);
+      }
     });
+  });
 });
 ```
 
