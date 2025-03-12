@@ -1,5 +1,6 @@
 :root {
   --fg: #000000;
+  --fg15: rgba(0, 0, 0, 0.15);
   --fg75: rgba(0, 0, 0, 0.75);
   --bg: #e9e7e7;
   --accent: var(--primary);
@@ -8,10 +9,17 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  /* :root {
     --fg: #ffffff;
     --fg75: rgba(255, 255, 255, 0.75);
     --bg: #1a202c;
+    --accent: var(--secondary);
+  } */
+  :root {
+    --fg: #e9e7e7;
+    --fg15: rgba(233, 231, 231, 0.15);
+    --fg75: rgba(233, 231, 231, 0.75);
+    --bg: #000000;
     --accent: var(--secondary);
   }
 }
