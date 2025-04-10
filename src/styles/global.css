@@ -70,28 +70,28 @@ p {
 
 h1 {
   font-size: 1.75rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 h2 {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 h3 {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 h4 {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 h5,
 h6 {
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .card {
@@ -135,24 +135,24 @@ h6 {
 }
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.65rem;
+    font-weight: 400;
   }
 
   h2 {
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: 1.40rem;
+    font-weight: 400;
   }
 
   h3 {
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.15rem;
+    font-weight: 400;
   }
 
   h4,
   h5,
   h6 {
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: 1.0rem;
+    font-weight: 400;
   }
 }
