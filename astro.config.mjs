@@ -6,8 +6,11 @@ import playformInline from '@playform/inline';
 import purgecss from 'astro-purgecss';
 import rlc from 'remark-link-card';
 import remarkGemoji from 'remark-gemoji';
+import remarkMath from 'remark-math';
 import astroExpressiveCode from 'astro-expressive-code';
+
 import rehypeExternalLinks from 'rehype-external-links';
+import rehypeKatex from 'rehype-katex';
 
 // https://astro.build/config
 export default defineConfig({
@@ -39,6 +42,7 @@ export default defineConfig({
     remarkPlugins: [
       rlc,
       remarkGemoji,
+      remarkMath,
     ],
     rehypePlugins: [
       [
@@ -48,6 +52,7 @@ export default defineConfig({
           rel: ['noopener', 'noreferrer'],
         }
       ],
-    ]
+      rehypeKatex,
+    ],
   }
 });
