@@ -104,17 +104,16 @@ import "katex/dist/katex.min.css";
     border-radius: 0.5rem;
     display: flex;
     align-items: stretch;
+  }
 
-    &:hover {
-      background-color: var(--fg15);
+  .og-card-container > a:hover {
+    background-color: var(--fg15);
+    color: var(--fg);
+    text-decoration: none;
+  }
 
-      color: var(--fg);
-      text-decoration: none;
-    }
-
-    & > span {
-      display: none;
-    }
+  .og-card-container > a > span {
+    display: none;
   }
 
   .og-card-info {
