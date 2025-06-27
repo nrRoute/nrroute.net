@@ -50,9 +50,14 @@ export default defineConfig({
         {
           target: '_blank',
           rel: ['noopener', 'noreferrer'],
-        }
+        },
       ],
-      rehypeKatex,
+      [
+        rehypeKatex,
+        {
+          strict: false,
+        }
+      ]
     ],
   }
 });
