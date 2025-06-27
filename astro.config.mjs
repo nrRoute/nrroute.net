@@ -11,6 +11,7 @@ import remarkGemoji from 'remark-gemoji';
 import remarkMath from 'remark-math';
 
 import rehypeKatex from 'rehype-katex';
+import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
 export default defineConfig({
@@ -53,6 +54,13 @@ export default defineConfig({
           strict: false,
         }
       ],
+      [
+        rehypeExternalLinks,
+        {
+          target: '_blank',
+          rel: ['noopener', 'noreferrer'],
+        }
+      ]
     ],
   }
 });
