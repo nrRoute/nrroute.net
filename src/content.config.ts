@@ -18,6 +18,8 @@ const pages = defineCollection({
     description: z.string().optional(),
     created: z.date(),
     modified: z.date().optional(),
+    prev: z.string().optional(),
+    next: z.string().optional(),
   }),
 });
 

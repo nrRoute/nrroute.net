@@ -21,7 +21,6 @@ const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
 });
 
 const formattedCreated = dateFormatter.format(page.data.created);
-
 const formattedModified = dateFormatter.format(page.data.modified);
 
 const { Content } = await render(page);
@@ -55,6 +54,12 @@ const { Content } = await render(page);
     <Prose>
       <Content />
     </Prose>
+  </div>
+  <div class="my-5 ml-auto px-3">
+    {page.data.prev &&
+      <a href={`/${page.data.prev}`} class="mr-3">前のページ</a>}
+    {page.data.next &&
+      <a href={`/${page.data.next}`}>次のページ</a>}
   </div>
   <div class="my-5 ml-auto px-3">
     <a href="/">トップページに戻る</a>
