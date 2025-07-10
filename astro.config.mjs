@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 
-import playformInline from '@playform/inline';
 import purgecss from 'astro-purgecss';
 import astroExpressiveCode from 'astro-expressive-code';
 import linkCard from 'astro-link-card';
@@ -28,7 +27,6 @@ export default defineConfig({
       }
     }),
     mdx(),
-    playformInline(),
     purgecss({
       fontFace: true,
     }),
