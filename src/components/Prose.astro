@@ -63,6 +63,8 @@ import "katex/dist/katex.min.css";
     & sup {
       font-size: 0.8rem;
       line-height: 1rem;
+      padding-left: 0.05rem;
+      padding-right: 0.05rem;
     }
 
     & blockquote {
@@ -72,11 +74,20 @@ import "katex/dist/katex.min.css";
     }
 
     & p > img {
-      max-width: 100%;
+      max-width: 90%;
       height: auto;
       margin-top: 1rem;
       margin-bottom: 1rem;
-      justify-self: center;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    & code:not(div.expressive-code code) {
+      background-color: var(--fg15);
+      padding: 0.15rem 0.2rem;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
     }
   }
 
