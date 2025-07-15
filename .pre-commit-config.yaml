@@ -9,3 +9,8 @@ repos:
         additional_dependencies: [python-frontmatter]
         pass_filenames: true
         stages: [pre-commit]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
