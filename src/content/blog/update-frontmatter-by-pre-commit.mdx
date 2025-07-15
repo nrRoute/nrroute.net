@@ -11,7 +11,7 @@ created: 2025-07-15
 [pre-commit](https://pre-commit.com/)は簡単にGitの色々なフックを管理、実行することができる便利ツールです。別に普通にpre-commitのスクリプトを書いても良かったのですが、シェルスクリプトに明るくないので今回はやめておきました。
 `.pre-commit-config.yaml` をプロジェクトのルートに作成し、そこにどういうフックを実行するかを書いていきます。今回はこんな感じにしました。
 
-```yaml
+```yaml title=".pre-commit-config.yaml"
 repos:
   - repo: local
     hooks:
@@ -33,7 +33,7 @@ repos:
 
 コードはこんな感じです。
 
-```py
+```py title="date_updater.py"
 import sys, frontmatter, datetime, subprocess
 from pathlib import Path
 
