@@ -2,6 +2,7 @@
 title: Markdownのfront matterをコミット時に自動で変更する
 description: pre-commitとpython-frontmatterを使ってコミット時にfront matterを編集する
 created: 2025-07-15
+modified: 2025-07-17
 ---
 
 # はじめに
@@ -22,7 +23,6 @@ repos:
         entry: python .githooks/date_updater.py
         additional_dependencies: [python-frontmatter]
         pass_filenames: true
-        stages: [pre-commit]
 ```
 
 コミット前に `src/content/` 以下にあるMDXファイルに対して、ローカルで作成したフック（`.githooks/date_updater.py`）を実行するというものです。追加のパッケージが必要だったので、それを `additional_dependencies` に追加しています。
@@ -41,13 +41,24 @@ for name in sys.argv[1:]:
     path = Path(name)
     post = frontmatter.load(path)
     if post.get("created") < datetime.datetime.today().date():
-        post["modified"] = datetime.datetime.today().date()
-        frontmatter.dump(post, path, sort_keys=False)
-        subprocess.run(["git", "add", str(path)], check=True)
+        if not post.get("modified") or post.get("modified") < datetime.datetime.today().date():
+            post["modified"] = datetime.datetime.today().date()
+            text = frontmatter.dumps(post, sort_keys=False).rstrip("\n") + "\n"
+            path.write_text(text, encoding="utf-8")
 ```
 
-pre-commitがコミットするファイルのパスを引数に渡してくれるので、設定と合わせてMDXファイルそれぞれに対してfront matterを取得し、作成日がコミット日よりも前であれば、更新日のfront matterを追加するというものです。
-二重コミットを防ぐということで、最後に `git add` するようにしました。
+pre-commitがコミットするファイルのパスを引数に渡してくれるので、設定と合わせてMDXファイルそれぞれに対してfront matterを取得し、「作成日がコミット日よりも前」かつ「「更新されていない」または「更新日がコミット日より前」」であれば、更新日のfront matterを追加するというものです。
+
+# 使い方
+
+まず、このコマンドでフックを設定します。
+
+```sh
+pre-commit install
+```
+
+設定できたら、あとはふつうにコミットすればよいです。フックによってファイルが編集されると、フックがfailするので、再度 `git add` `git commit` しなおします。
+すべてのフックがpassしたら、無事コミットできます。
 
 # おわりに
 まだpre-commitの仕様についてよくわかっていないので、今後も修正が入ると思います。`stages` がいらないんじゃないかとか `git add` しなかったらどうなのかとか・・・
