@@ -6,9 +6,7 @@ for name in sys.argv[1:]:
     post = frontmatter.load(path)
 
     if post.get("created") < datetime.datetime.today().date():
-        post["modified"] = datetime.datetime.today().date()
-
-    text = frontmatter.dumps(post, sort_keys=False).rstrip("\n") + "\n"
-    path.write_text(text, encoding="utf-8")
-
-    subprocess.run(["git", "add", str(path)], check=True)
+        if post.get("modified") and post.get("modified") < datetime.datetime.today().date():
+            post["modified"] = datetime.datetime.today().date()
+            text = frontmatter.dumps(post, sort_keys=False).rstrip("\n") + "\n"
+            path.write_text(text, encoding="utf-8")

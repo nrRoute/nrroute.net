@@ -8,7 +8,6 @@ repos:
         entry: python .githooks/date_updater.py
         additional_dependencies: [python-frontmatter]
         pass_filenames: true
-        stages: [pre-commit]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
