@@ -30,8 +30,8 @@ const params = Astro.params;
 
 <Layout title=`${params.tag}の記事一覧` description="記事一覧">
   <div class="card w-auto">
-    <div class="relative flex items-center text-center justify-center">
-      <h1 class="text-2xl">
+    <div class="relative flex justify-center">
+      <h1 class="text-2xl text-center">
         {params.tag}の記事一覧
       </h1>
     </div>
@@ -73,7 +73,7 @@ const params = Astro.params;
   }
 
   .ml-auto {
-    margin-left: auto;
+    margin-inline-start: auto;
   }
 
   .px-3 {

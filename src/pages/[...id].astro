@@ -28,21 +28,17 @@ const { Content } = await render(page);
 
 <Layout title={page.data.title} description={page.data.description || page.data.title}>
   <div class="card w-auto">
-    <div class="relative flex items-center text-center justify-center">
-      <h1 class="mb-3 text-2xl">
+    <div class="relative flex justify-center mb-3">
+      <h1 class="text-2xl text-center">
         {page.data.title}
       </h1>
     </div>
-    {
-      page.data.modified ?
-        <div class="grid grid-cols-2 text-center border-b-2 border-current mb-2">
-          <div>作成日: {formattedCreated}</div>
-          <div>更新日: {formattedModified}</div>
-        </div> :
-        <div class="text-center border-b-2 border-current mb-2">
-          <div>作成日: {formattedCreated}</div>
-        </div>
-    }
+    <div class="flex justify-around border-b-2 border-current mb-2">
+      <div>作成日: {formattedCreated}</div>
+      {
+        page.data.modified && <div>更新日: {formattedModified}</div>
+      }
+    </div>
     {
       page.data.description &&
       <div class="text-center">
@@ -79,12 +75,16 @@ const { Content } = await render(page);
     line-height: 2.5rem;
   }
 
-  .grid {
-    display: grid;
+  .flex {
+    display: flex;
   }
 
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .justify-center {
+    justify-content: center;
+  }
+
+  .justify-around {
+    justify-content: space-around;
   }
 
   .text-center {
@@ -105,7 +105,7 @@ const { Content } = await render(page);
   }
 
   .ml-auto {
-    margin-left: auto;
+    margin-inline-start: auto;
   }
 
   .px-3 {
