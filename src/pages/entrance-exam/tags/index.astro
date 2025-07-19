@@ -4,7 +4,7 @@ import Layout from "@/layouts/Layout.astro";
 
 const allPosts = await getCollection("entrance-exam");
 const allTags = allPosts.flatMap((page) => page.data.tags || []);
-const uniqueTags = Array.from(new Set(allTags));
+const uniqueTags = Array.from(new Set(allTags)).sort((a, b) => a.localeCompare(b));
 ---
 
 <Layout title=`タグ一覧` description="タグ一覧">
