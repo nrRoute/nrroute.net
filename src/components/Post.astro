@@ -36,7 +36,7 @@ const { Content } = await render(post);
       }
     </div>
     {
-      post.data.tags && post.data.tags.length > 0 &&
+      "tags" in post.data && post.data.tags && post.data.tags.length > 0 &&
       <div class="text-center mb-2">
         {post.data.tags.map((tag) => (
           <a href={`tags/${tag}`} class="ml-2">{tag}</a>
@@ -44,7 +44,7 @@ const { Content } = await render(post);
       </div>
     }
     {
-      post.data.description &&
+      "description" in post.data && post.data.description &&
       <div class="text-center">
         {post.data.description}
       </div>
@@ -56,9 +56,9 @@ const { Content } = await render(post);
     </Prose>
   </div>
   <div class="my-5 ml-auto px-3">
-    {post.data.prev &&
+    {"prev" in post.data && post.data.prev &&
       <a href={`/${post.data.prev}`} class="mr-3">前のページ</a>}
-    {post.data.next &&
+    {"next" in post.data && post.data.next &&
       <a href={`/${post.data.next}`}>次のページ</a>}
   </div>
   <div class="my-5 ml-auto px-3">
