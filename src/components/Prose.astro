@@ -7,12 +7,13 @@ import "katex/dist/katex.min.css";
 </article>
 
 <style is:global>
-
   #post {
     max-width: 100%;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
+    margin-inline: auto;
     word-break: break-all;
+    padding-bottom: 1rem;
+    border-bottom-width: 2px;
+    border-bottom-color: currentColor;
 
     & h1 {
       font-size: 1.75rem;
@@ -43,8 +44,7 @@ import "katex/dist/katex.min.css";
 
     & p {
       line-height: 1.75rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+      margin-block: 1rem;
     }
 
     & ul {
@@ -63,8 +63,7 @@ import "katex/dist/katex.min.css";
     & sup {
       font-size: 0.8rem;
       line-height: 1rem;
-      padding-left: 0.05rem;
-      padding-right: 0.05rem;
+      padding-inline: 0.05rem;
     }
 
     & blockquote {
@@ -76,11 +75,9 @@ import "katex/dist/katex.min.css";
     & p > img {
       max-width: 90%;
       height: auto;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
+      margin-block: 1rem;
     }
 
     & code:not(div.expressive-code code) {
@@ -93,8 +90,7 @@ import "katex/dist/katex.min.css";
     & iframe {
       display: block;
       max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
     }
   }
 
@@ -102,14 +98,12 @@ import "katex/dist/katex.min.css";
     #post {
       & h1 {
         font-size: 1.5rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-block: 1rem;
       }
 
       & h2 {
         font-size: 1.25rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-block: 1rem;
       }
 
       & h3 {

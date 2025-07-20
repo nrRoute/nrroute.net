@@ -50,17 +50,18 @@ const { Content } = await render(post);
       </div>
     }
   </div>
-  <div id="content" class="border-b-2 border-current">
-    <Prose>
-      <Content />
-    </Prose>
-  </div>
-  <div class="my-5 ml-auto px-3">
-    {"prev" in post.data && post.data.prev &&
-      <a href={`/${post.data.prev}`} class="mr-3">前のページ</a>}
-    {"next" in post.data && post.data.next &&
-      <a href={`/${post.data.next}`}>次のページ</a>}
-  </div>
+  <Prose>
+    <Content />
+  </Prose>
+  {
+    ("prev" in post.data || "next" in post.data) &&
+    <div class="my-5 flex justify-around px-3">
+      {"prev" in post.data && post.data.prev &&
+        <a href={`/${post.data.prev}`}>前のページ</a>}
+      {"next" in post.data && post.data.next &&
+        <a href={`/${post.data.next}`}>次のページ</a>}
+    </div>
+  }
   <div class="my-5 ml-auto px-3">
     <a href={backlink}>{backlinkText}</a>
   </div>
@@ -110,10 +111,6 @@ const { Content } = await render(post);
   .my-5 {
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
-  }
-
-  .ml-auto {
-    margin-inline-start: auto;
   }
 
   .px-3 {
