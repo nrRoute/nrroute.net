@@ -3,7 +3,7 @@ title: 院試勉強20250710
 created: 2025-07-10
 prev: entrance-exam/20250707
 next: entrance-exam/20250714
-modified: 2025-07-18
+modified: 2025-07-28
 tags:
 - automaton-algorithm
 - guide
@@ -86,6 +86,20 @@ L_2 = \left\{
   \right.
 $$
 
+### 正規言語であることを示す
+
+DFAか正規表現を与える。
+
+### 文脈自由言語でないことを示す
+
+以下に示す反復補題のCFG版を使う。
+
+言語 $L$ がCFGならば、ある数 $K$ が存在して、$w\gt K$ を満たす任意の文字列 $w\in L$ について、$w=uvwxy" なる分割が存在し、これは以下の条件を満たす。
+
+1. $\forall i. uv^i wx^i y\in L$
+2. $|vwx| \le K$
+3. $|vx| > 0$
+
 ### 文脈自由言語であることを示す
 
-定義に合うかを示す。例題は上の $L_2$。
+定義に合うか、あるいは正規言語であることを示す。例題は上の $L_2$。

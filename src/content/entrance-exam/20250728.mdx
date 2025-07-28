@@ -6,6 +6,7 @@ next: entrance-exam/20250729
 tags:
 - computer-architecture
 - computer-system
+- programming-language
 ---
 
 # 計算機システム
@@ -86,3 +87,72 @@ $$
 # 情報理論
 
 ## クラフトの不等式
+
+TODO
+
+## 情報源符号化定理
+
+TODO
+
+## いろいろな通信路
+
+TODO
+
+# プログラミング言語処理系
+
+インタプリタ実装のためのコード片を載せておく。データの定義は `syntax.ml` みたいな感じ。
+
+```ocaml title="syntax.ml"
+(* id *)
+type id = string
+
+(* 演算子 *)
+type binOp = Plus | Mult | Lt | And | Or
+
+(* 式 *)
+type exp =
+  | Var of id
+  | ILit of int
+  | BLit of bool
+  | BinOp of binOp * exp * exp
+  | IfExp of exp * exp * exp
+  | LetExp of id * exp * exp
+
+(* 値 *)
+type exval =
+  | IntV of int
+  | BoolV of bool
+
+(* 環境 *)
+type environment = (id * exval) list
+
+(* 例外 *)
+exception Error of string
+```
+
+評価器のコードはこんな感じ。
+
+```ocaml title="eval.ml"
+let rec find x env =
+  match env with
+  | [] -> raise (Error (x ^ "was not found in the environment."))
+  | (id, v) :: t -> if id = x then v else find x t
+
+(* 式の評価 *)
+let rec eval env = function
+  | ILit i -> IntV i
+  | BLit b -> BoolV b
+  | Var x -> find x env (* 環境からxに束縛された値を探す *)
+  | IfExp (e, e1, e2) ->
+    let test = eval env e in
+    match test with
+    | BoolV true -> eval env e1
+    | BoolV false -> eval env e2
+    | _ -> raise (Error ("test must be bool."))
+  | LetExp (id, e1, e2) ->
+    let v1 = eval env e1 in
+    let newenv = (id, v1) :: env in
+    eval newenv e2;;
+```
+
+なんかマジで苦しくなってきた。本当に受かるのか？
