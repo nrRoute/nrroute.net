@@ -1,33 +1,12 @@
 ---
-title: 院試勉強20250716
-created: 2025-07-16
-prev: entrance-exam/20250715
-next: entrance-exam/20250717
-modified: 2025-07-31
+title: プログラミング言語まとめ
+created: 2025-07-31
 tags:
-- computer-system
 - programming-language
+- guide
 ---
 
-# キャッシュ（計算機システム）
-
-キャッシュのことを全然わかっていない。
-
-## ヒットとミスの判定
-
-タグとインデックス（セット）を見る。インデックスとタグが一致していればヒット。タグが一致していなければミス。
-
-## load/store の対応
-
-loadでヒットしたときはなにもしない。
-loadでミスしたときは、ライトバックでdirty bitが1なら書き戻しが起きて、0のときは起きない。その後、主記憶から該当ブロックがロードされて置き換わる。
-
-storeでヒットしたときはキャッシュの該当する語が書き換わる。dirty bitが0なら1になる。
-storeでミスしたときは、dirty bitが0ならブロックが置き換わって、該当する語が書き換わる。1なら書き戻しが起こる。
-
-dirty bitは、ブロックが主記憶との差分があるかを管理する。差分がある（1）場合、置換対象であれば書き戻しが起こる。
-
-# プログラミング言語
+# 言語処理系
 
 ## LL(1) 文法
 
@@ -79,3 +58,60 @@ $$
 まず、LL(1)文法から生成される言語はLL(1)言語。しかし、LL(1)文法でなくてもLL(1)言語となる場合もある。
 
 [^1]: $Y$の添字が$k-1$であることに注意。$n=1$のときはならばの仮定がなくなるので結論が成り立ち、$Y_1$が追加される。
+
+## インタプリタ実装
+
+インタプリタ実装のためのコード片を載せておく。データの定義は `syntax.ml` みたいな感じ。
+
+```ocaml title="syntax.ml"
+(* id *)
+type id = string
+
+(* 演算子 *)
+type binOp = Plus | Mult | Lt | And | Or
+
+(* 式 *)
+type exp =
+  | Var of id
+  | ILit of int
+  | BLit of bool
+  | BinOp of binOp * exp * exp
+  | IfExp of exp * exp * exp
+  | LetExp of id * exp * exp
+
+(* 値 *)
+type exval =
+  | IntV of int
+  | BoolV of bool
+
+(* 環境 *)
+type environment = (id * exval) list
+
+(* 例外 *)
+exception Error of string
+```
+
+評価器のコードはこんな感じ。
+
+```ocaml title="eval.ml"
+let rec find x env =
+  match env with
+  | [] -> raise (Error (x ^ "was not found in the environment."))
+  | (id, v) :: t -> if id = x then v else find x t
+
+(* 式の評価 *)
+let rec eval env = function
+  | ILit i -> IntV i
+  | BLit b -> BoolV b
+  | Var x -> find x env (* 環境からxに束縛された値を探す *)
+  | IfExp (e, e1, e2) ->
+    let test = eval env e in
+    match test with
+    | BoolV true -> eval env e1
+    | BoolV false -> eval env e2
+    | _ -> raise (Error ("test must be bool."))
+  | LetExp (id, e1, e2) ->
+    let v1 = eval env e1 in
+    let newenv = (id, v1) :: env in
+    eval newenv e2;;
+```
