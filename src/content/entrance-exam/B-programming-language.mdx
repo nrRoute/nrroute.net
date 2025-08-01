@@ -4,6 +4,7 @@ created: 2025-07-31
 tags:
 - programming-language
 - guide
+modified: 2025-08-01
 ---
 
 # 言語処理系
@@ -115,3 +116,14 @@ let rec eval env = function
     let newenv = (id, v1) :: env in
     eval newenv e2;;
 ```
+
+# 計算と論理
+
+## 型付きラムダ計算
+
+カッコの有無に注意。
+
+## 自然演繹
+
+$\bot$ が示したい命題に入っていたら、$\Gamma \vdash \bot$ を何らかの手段で作る。大抵は爆発則 $\bot E$ から作る。
+ORの導入規則 $\lor I$ はすぐには使わない。
