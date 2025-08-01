@@ -3,7 +3,7 @@ title: 情報理論まとめ
 created: 2025-07-31
 tags:
 - information-theory
-- guide
+- summary
 modified: 2025-08-01
 ---
 
@@ -56,7 +56,7 @@ $$
 Yを知ることで、Xの曖昧さがどのぐらい減ったかをそのエントロピーの差で計算できる。
 
 $$
-I(X;Y) = H(X) - H(X|Y)
+I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X) = I(Y;X)
 $$
 
 この値は必ず0以上になるので、負になった場合はどこかで計算を間違えている。
@@ -86,7 +86,7 @@ $$
 通信路容量は
 
 $$
-C=\max_{P_X\in\mathcal{P}} I(X;Y)
+C = \max_{P_X\in\mathcal{P}} I(X;Y)
 $$
 
 ### 記憶のない2元対称通信路 (BSC)
