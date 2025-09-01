@@ -54,6 +54,7 @@ body {
     "Segoe UI Symbol", "Noto Color Emoji", "-apple-system";
   line-height: inherit;
   margin-inline: auto;
+  margin-block: 0;
   padding-inline: 1.5rem;
   max-width: 768px;
   min-height: 100vh;
