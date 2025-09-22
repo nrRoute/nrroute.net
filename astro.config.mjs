@@ -15,7 +15,7 @@ import rehypeMermaid from 'rehype-mermaid';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://nrroute.github.io',
+  site: 'https://nrroute.net',
   integrations: [
     sitemap(),
     astroExpressiveCode({
