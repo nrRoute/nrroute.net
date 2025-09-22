@@ -1,4 +1,4 @@
-# nrroute.github.io
+# nrroute.net
 
 # Setup
 ```sh
