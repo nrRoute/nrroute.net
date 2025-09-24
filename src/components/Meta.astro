@@ -19,5 +19,15 @@ const ogImage = Astro.site ? new URL(icon.src, Astro.site).toString() : icon.src
 <meta property="og:type" content="website" />
 <meta property="og:title" content={props.title} />
 <meta property="og:description" content={props.description} />
+<meta property="og:site_name" content="nrRoute" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content={icon.width.toString()} />
+<meta property="og:image:height" content={icon.height.toString()} />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={props.title} />
+<meta name="twitter:description" content={props.description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:site" content="@nrRoute" />
+<meta name="twitter:creator" content="@nrRoute" />
