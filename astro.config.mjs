@@ -27,12 +27,20 @@ export default defineConfig({
       }
     }),
     mdx(),
-    purgecss({
-      fontFace: true,
-    }),
     linkCard({
       openInNewTab: true,
-    })
+    }),
+    purgecss({
+      fontFace: true,
+      keyframes: true,
+      variables: true,
+      content: [
+        "./src/**/*.{astro,html,js,md,mdx,ts}",
+      ],
+      safelist: {
+        greedy: [/expressive-code/],
+      },
+    }),
   ],
   build: {
     format: "file",

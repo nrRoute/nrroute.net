@@ -52,6 +52,7 @@ body {
   font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", ui-sans-serif,
     system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji", "-apple-system";
+  font-display: swap;
   line-height: inherit;
   margin-inline: auto;
   margin-block: 0;
