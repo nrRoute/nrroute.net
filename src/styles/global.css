@@ -5,7 +5,7 @@
   --bg: #e9e7e7;
   --accent: var(--primary);
   --primary: #70120f;
-  --secondary: #f6e05e;
+  --secondary: #f3c62e;
 }
 
 @media (prefers-color-scheme: dark) {
