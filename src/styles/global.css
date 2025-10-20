@@ -1,25 +1,19 @@
 :root {
-  --fg: #000000;
-  --fg15: rgba(0, 0, 0, 0.15);
-  --fg75: rgba(0, 0, 0, 0.75);
-  --bg: #e9e7e7;
+  --fg: hsl(0, 4.35%, 9.02%); /* #181616 */
+  --fg15: hsla(0, 4.35%, 9.02%, 0.15);
+  --fg75: hsla(0, 4.35%, 9.02%, 0.75);
+  --bg: hsl(0, 4.35%, 90.98%); /* #e9e7e7 */
   --accent: var(--primary);
   --primary: #70120f;
   --secondary: #f3c62e;
 }
 
 @media (prefers-color-scheme: dark) {
-  /* :root {
-    --fg: #ffffff;
-    --fg75: rgba(255, 255, 255, 0.75);
-    --bg: #1a202c;
-    --accent: var(--secondary);
-  } */
   :root {
-    --fg: #e9e7e7;
-    --fg15: rgba(233, 231, 231, 0.15);
-    --fg75: rgba(233, 231, 231, 0.75);
-    --bg: #000000;
+    --fg: hsl(0, 4.35%, 90.98%); /* #e9e7e7 */
+    --fg15: hsla(0, 4.35%, 90.98%, 0.15);
+    --fg75: hsla(0, 4.35%, 90.98%, 0.75);
+    --bg: hsl(0, 4.35%, 9.02%); /* #181616 */
     --accent: var(--secondary);
   }
 }
