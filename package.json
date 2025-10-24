@@ -14,17 +14,17 @@
     "bun": "^1.2.0"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "4.3.7",
+    "@astrojs/check": "0.9.5",
+    "@astrojs/mdx": "4.3.8",
     "@astrojs/sitemap": "3.6.0",
-    "astro": "5.14.6",
+    "astro": "5.15.1",
     "astro-expressive-code": "^0.41.3",
     "astro-purgecss": "^5.3.0",
     "purgecss": "^7.0.2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.6",
-    "astro-link-card": "^1.0.36",
+    "astro-link-card": "^1.0.37",
     "playwright": "^1.56.1",
     "rehype-external-links": "^3.0.0",
     "rehype-katex": "^7.0.1",
