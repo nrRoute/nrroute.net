@@ -34,16 +34,14 @@ export default defineConfig({
       fontFace: true,
       keyframes: true,
       variables: true,
-      content: [
-        "./src/**/*.{astro,html,js,md,mdx,ts}",
-      ],
-      safelist: {
-        greedy: [/expressive-code/],
-      },
     }),
   ],
   build: {
     format: "file",
+  },
+  prefetch: {
+    defaultStrategy: "viewport",
+    prefetchAll: true,
   },
   markdown: {
     syntaxHighlight: {
@@ -62,6 +60,7 @@ export default defineConfig({
       [
         rehypeKatex,
         {
+          trust: true,
           strict: false,
         }
       ],
