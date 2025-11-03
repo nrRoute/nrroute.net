@@ -1,0 +1,62 @@
+---
+title: NeoVimのコマンドメモ
+description: 備忘録
+created: 2025-11-03
+---
+
+個人的な備忘録。随時更新する予定です。
+
+# Vimのコマンド
+
+- `i`, `I`, `a`, `A`, `o`, `O`: Insert Mode
+- `v`, `V`, `<C-v>`: Visual Mode
+- `dd`: delete current row
+- `d`: delete (visual mode)
+- `y`: yank (visual mode)
+- `p`: paste
+- `:wqa`: save and quit all
+- `:checkhealth <extension-name>`: 拡張のhealth check
+
+# LSP
+
+- `:LspInfo`: show lsp status
+- `<leader>k`: show info
+- `<leader>lk`: show diagnostics
+
+# [Neogit](https://github.com/NeogitOrg/neogit)
+
+- `:Neogit`: Open Neogit Dashboard
+- `:Neogit push`: Push
+
+# [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+
+- `:Telescope find_files` or `<leader>ff`: fzf file
+- `:Telescope live_grep` or `<leader>fg`: live grep
+
+# [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter/tree/main)
+
+- `:TSUpdate`: build
+- `:TSInstall <name>`: install parser
+- `:TSLog`: show log
+
+# [coc.nvim](https://github.com/neoclide/coc.nvim)
+
+- `:CocInstall`: install coc extension
+
+# [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
+
+- `:ToggleTerm`: launch terminal in current directory
+- `<C-/>`: フォーカスをNeoVimに戻す
+- `:ToggleTerm close` close terminal
+
+# [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+
+- `<S-h>, <S-l>`: switch tab
+- `<leader>we`: go to tab close mode
+- `<leader>wall`: close all tabs without current tab
+
+# [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+
+- `:NvimTreeOpen`: open tree
+- `:NvimTreeToggle`: toggle open and close
+- `:NvimTreeFocus`: open and focus to tree
